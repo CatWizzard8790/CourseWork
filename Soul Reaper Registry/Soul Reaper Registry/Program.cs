@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Soul_Reaper_Registry__Kursov_Proekt
+namespace Soul_Reaper_Registry
 {
     class Program
     {

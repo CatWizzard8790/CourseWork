@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soul Reaper Registry", "Soul Reaper Registry- Kursov Proekt\Soul Reaper Registry.csproj", "{9C777470-00F5-4463-BC00-4E275BE0CFDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Soul Reaper Registry", "Soul Reaper Registry\Soul Reaper Registry.csproj", "{41D741F5-4AC5-4EC2-AE22-1C2F5474975A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9C777470-00F5-4463-BC00-4E275BE0CFDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C777470-00F5-4463-BC00-4E275BE0CFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C777470-00F5-4463-BC00-4E275BE0CFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C777470-00F5-4463-BC00-4E275BE0CFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D741F5-4AC5-4EC2-AE22-1C2F5474975A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D741F5-4AC5-4EC2-AE22-1C2F5474975A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D741F5-4AC5-4EC2-AE22-1C2F5474975A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D741F5-4AC5-4EC2-AE22-1C2F5474975A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E35072FE-B4B1-4FFF-A6A5-674316EDAE13}
+		SolutionGuid = {E980E8E5-4DB2-45F5-B123-CF2753A462EF}
 	EndGlobalSection
 EndGlobal
