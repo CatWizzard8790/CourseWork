@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt.csproj": {}
+    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry.csproj": {}
   },
   "projects": {
-    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt.csproj": {
+    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt.csproj",
-        "projectName": "Soul Reaper Registry- Kursov Proekt",
-        "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt.csproj",
+        "projectUniqueName": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry.csproj",
+        "projectName": "Soul Reaper Registry",
+        "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry.csproj",
         "packagesPath": "C:\\Users\\Student KK1\\.nuget\\packages\\",
         "outputPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry- Kursov Proekt\\Soul Reaper Registry- Kursov Proekt\\obj\\",
         "projectStyle": "PackageReference",
