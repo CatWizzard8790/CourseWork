@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soul_Reaper_Registry
 {
-    public class SoulReapersMission
+    public class SoulReapersMissions
     {
         public int SRId { get; private set; }
         public int MissionId { get; private set; }
