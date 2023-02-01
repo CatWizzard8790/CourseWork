@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Soul_Reaper_Registry__Kursov_Proekt</RootNamespace>
+    <RootNamespace>Soul_Reaper_Registry</RootNamespace>
   </PropertyGroup>
 
 </Project>
