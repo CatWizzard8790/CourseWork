@@ -6,7 +6,7 @@ namespace Soul_Reaper_Registry
     {
         static void Main(string[] args)
         {
-            Divisions 
+           
         }
     }
 }
