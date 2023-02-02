@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Soul_Reaper_Registry
 {
+    /// <summary>
+    /// There are multiple types of hollows, depending on its stage of evolution. Each one has a name and different characteristics.
+    /// </summary>
     class HollowClassifications
     {
         public int HCId { get; private set; }
