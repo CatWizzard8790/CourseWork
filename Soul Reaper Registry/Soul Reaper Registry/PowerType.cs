@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Soul_Reaper_Registry
 {
-   public enum WeaponType
+    public enum PowerType
     {
         Bankai,
         Resurreccion,
