@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SRRAppConsole.Presentation;
 
 namespace SRRAppConsole
 {
-    internal class StartUp
+    public class StartUp
     {
+        Display display = new Display();
     }
 }
