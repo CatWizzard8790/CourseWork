@@ -2,7 +2,7 @@
 
 namespace Soul_Reaper_Registry
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

@@ -11,10 +11,10 @@ namespace Soul_Reaper_Registry
     /// </summary>
     public class SpecialDivisions
     {
-        public int SDId { get; private set; }
-        public string Name { get; private set; }
-        public int LeaderId { get; private set; }
-        public string Description { get; private set; }
-        public int DivisionId { get; private set; }
+        public int SDId { get; set; }
+        public string Name { get; set; }
+        public int LeaderId { get; set; }
+        public string Description { get; set; }
+        public int DivisionId { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace Soul_Reaper_Registry
     /// </summary>
     public class SoulReapersMissions
     {
-        public int SRId { get; private set; }
-        public int MissionId { get; private set; }
+        public int SRId { get; set; }
+        public int MissionId { get; set; }
     }
 }

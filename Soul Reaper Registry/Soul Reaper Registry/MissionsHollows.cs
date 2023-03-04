@@ -9,10 +9,10 @@ namespace Soul_Reaper_Registry
     /// <summary>
     /// Intermediate table for Hollows and Missions, allowing the Many to Many relation. It also has information about whether the Hollow is dead or alive
     /// </summary>
-    class MissionsHollows
+    public class MissionsHollows
     {
-        public int MissionsId { get; private set; }
-        public int HollowsId { get; private set; }
-        public bool HollowStatus { get; private set; }
+        public int MissionsId { get; set; }
+        public int HollowsId { get; set; }
+        public bool HollowStatus { get; set; }
     }
 }

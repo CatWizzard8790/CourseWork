@@ -9,10 +9,10 @@ namespace Soul_Reaper_Registry
     /// <summary>
     /// There are multiple types of hollows, depending on its stage of evolution. Each one has a name and different characteristics.
     /// </summary>
-    class HollowClassifications
+    public class HollowClassifications
     {
-        public int HCId { get; private set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
+        public int HCId { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

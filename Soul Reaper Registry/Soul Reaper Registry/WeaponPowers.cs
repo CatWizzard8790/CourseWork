@@ -11,10 +11,10 @@ namespace Soul_Reaper_Registry
     /// </summary>
     public class WeaponPowers
     {
-        public int WPId { get; private set; }
-        public string FirstForm { get; private set; }
-        public string SecondForm { get; private set; }
-        public PowerType PType { get; private set; }
+        public int WPId { get; set; }
+        public string FirstForm { get; set; }
+        public string SecondForm { get; set; }
+        public PowerType PType { get; set; }
 
     }
 }
