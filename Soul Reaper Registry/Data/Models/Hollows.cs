@@ -19,7 +19,7 @@ namespace Data.Models
         public string Name { get; set; }
         public int ClassId { get; set; }
         public bool Alive { get; set; }
-        public int WeaponPowerId { get; set; }
-        public string Description { get; set; }
+        public int? WeaponPowerId { get; set; }
+        public string? Description { get; set; }
     }
 }

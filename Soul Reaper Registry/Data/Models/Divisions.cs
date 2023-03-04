@@ -17,9 +17,9 @@ namespace Data.Models
         public int DivisionNumber { get; set; }
 
         public string Name { get; set; }
-        public int CaptainId { get; set; }
-        public int LieutenantId { get; set; }
-        public string Description { get; set; }
+        public int? CaptainId { get; set; }
+        public int? LieutenantId { get; set; }
+        public string? Description { get; set; }
 
     }
 }

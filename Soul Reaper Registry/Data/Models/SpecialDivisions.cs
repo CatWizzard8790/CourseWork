@@ -16,8 +16,8 @@ namespace Data.Models
         public int SDId { get; set; }
 
         public string Name { get; set; }
-        public int LeaderId { get; set; }
-        public int DivisionId { get; set; }
-        public string Description { get; set; }
+        public int? LeaderId { get; set; }
+        public int? DivisionId { get; set; }
+        public string? Description { get; set; }
     }
 }
