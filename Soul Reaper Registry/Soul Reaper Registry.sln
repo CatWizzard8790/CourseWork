@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{A56048ED-FB05-4EE5-8304-7E53C9B00C72}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRRAppConsole", "SRRAppConsole\SRRAppConsole.csproj", "{4A523834-66F1-4936-B3C0-6A9C28B6D59E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{A56048ED-FB05-4EE5-8304-7E53C9B00C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A56048ED-FB05-4EE5-8304-7E53C9B00C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A56048ED-FB05-4EE5-8304-7E53C9B00C72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
