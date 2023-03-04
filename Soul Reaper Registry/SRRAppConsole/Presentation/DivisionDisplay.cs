@@ -14,9 +14,11 @@ namespace SRRAppConsole.Presentation
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@"  _                         
- | \ o    o  _ o  _  ._   _ 
- |_/ | \/ | _> | (_) | | _> ");
+            Console.WriteLine(@"  ____  _       _     _                 
+ |  _ \(_)_   _(_)___(_) ___  _ __  ___ 
+ | | | | \ \ / / / __| |/ _ \| '_ \/ __|
+ | |_| | |\ V /| \__ \ | (_) | | | \__ \
+ |____/|_| \_/ |_|___/_|\___/|_| |_|___/");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
@@ -28,11 +30,11 @@ namespace SRRAppConsole.Presentation
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 30));
             Console.WriteLine(@"  _                         
  | \ o    o  _ o  _  ._   _ 
  |_/ | \/ | _> | (_) | | _> ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 30 ));
             var products = divBusiness.GetAll();
             foreach (var item in products)
             {

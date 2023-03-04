@@ -16,10 +16,12 @@ namespace SRRAppConsole.Presentation
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@"  __              _                       
- (_   _      |   |_)  _   _. ._   _  ._ _ 
- __) (_) |_| |   | \ (/_ (_| |_) (/_ | _> 
-                             |            ");
+            Console.WriteLine(@"  ____              _   ____                                
+ / ___|  ___  _   _| | |  _ \ ___  __ _ _ __   ___ _ __ ___ 
+ \___ \ / _ \| | | | | | |_) / _ \/ _` | '_ \ / _ \ '__/ __|
+  ___) | (_) | |_| | | |  _ <  __/ (_| | |_) |  __/ |  \__ \
+ |____/ \___/ \__,_|_| |_| \_\___|\__,_| .__/ \___|_|  |___/
+                                       |_|                  ");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
