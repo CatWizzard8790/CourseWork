@@ -9,6 +9,9 @@ namespace SRRAppConsole
 {
     public class StartUp
     {
-        Display display = new Display();
+        static void Main(string[] args)
+        {
+            Display display = new Display();
+        }
     }
 }
