@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 .obj
 .bin
+.vs
