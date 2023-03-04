@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,9 @@ namespace Data.Models
     /// </summary>
     public class Hollows
     {
+        [Key]
         public int HId { get; set; }
+
         public string Name { get; set; }
         public int ClassId { get; set; }
         public bool Alive { get; set; }
