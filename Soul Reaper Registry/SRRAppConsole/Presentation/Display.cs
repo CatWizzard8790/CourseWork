@@ -61,7 +61,7 @@ namespace SRRAppConsole.Presentation
         private void ListAll()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(new string(' ', 18) + "PRODUCTS");
+            Console.WriteLine(new string(' ', 18) + "SR");
             Console.WriteLine(new string('-', 40));
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
@@ -74,14 +74,14 @@ namespace SRRAppConsole.Presentation
         private void Add()
         {
             SoulReapers product = new SoulReapers();
-            Console.Write("Name: ");
+            Console.Write("First Name: ");
             product.FirstName = Console.ReadLine();
-            Console.Write("Price: ");
+            Console.Write("Last Name: ");
             product.LastName = Console.ReadLine();
-            Console.Write("Stock: ");
+            Console.Write("Weapon Name: ");
             product.WeaponName = Console.ReadLine();
             sRRBusiness.Add(product);
-            Console.WriteLine("The product has been added!");
+            Console.WriteLine("The Soul Reaper has been added!");
         }
 
         private void Update()
