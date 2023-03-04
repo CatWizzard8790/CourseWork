@@ -32,10 +32,10 @@ namespace Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("DivisionId")
+                    b.Property<int?>("DivisionId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("EnrollDate")
+                    b.Property<DateTime?>("EnrollDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
@@ -44,13 +44,13 @@ namespace Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("SpecialId")
+                    b.Property<int?>("SpecialId")
                         .HasColumnType("int");
 
                     b.Property<string>("WeaponName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("WeaponPowerId")
+                    b.Property<int?>("WeaponPowerId")
                         .HasColumnType("int");
 
                     b.HasKey("SRId");

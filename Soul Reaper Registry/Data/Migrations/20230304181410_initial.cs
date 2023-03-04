@@ -15,12 +15,12 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    EnrollDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EnrollDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Available = table.Column<bool>(type: "bit", nullable: false),
-                    DivisionId = table.Column<int>(type: "int", nullable: false),
-                    SpecialId = table.Column<int>(type: "int", nullable: false),
+                    DivisionId = table.Column<int>(type: "int", nullable: true),
+                    SpecialId = table.Column<int>(type: "int", nullable: true),
                     WeaponName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WeaponPowerId = table.Column<int>(type: "int", nullable: false),
+                    WeaponPowerId = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
