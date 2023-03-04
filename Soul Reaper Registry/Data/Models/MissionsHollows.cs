@@ -11,6 +11,7 @@ namespace Data.Models
     /// </summary>
     public class MissionsHollows
     {
+
         public int MissionsId { get; set; }
         public int HollowsId { get; set; }
         public bool HollowStatus { get; set; }

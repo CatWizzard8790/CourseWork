@@ -12,6 +12,7 @@ namespace Data.Models
     /// </summary>
     public class Divisions
     {
+        
         public int DivisionNumber { get; set; }
         public string Name { get; set; }
         public int CaptainId { get; set; }
