@@ -73,7 +73,7 @@ namespace SRRAppConsole.Presentation
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
-                Console.WriteLine($"{item.SRId} {item.FirstName} {item.LastName} {item.WeaponName}");
+                Console.WriteLine($"{item.SRId} {item.FirstName} {item.LastName} {item.EnrollDate}{item.Available} {item.DivisionId} {item.SpecialId} {item.WeaponName} {item.WeaponPowerId} {item.Description}");
             }
 
         }
@@ -85,8 +85,20 @@ namespace SRRAppConsole.Presentation
             sr.FirstName = Console.ReadLine();
             Console.Write("Last Name: ");
             sr.LastName = Console.ReadLine();
+            Console.Write("Enroll Date: ");
+            sr.EnrollDate = DateTime.Parse(Console.ReadLine());
+            Console.Write("Available: ");
+            sr.Available = bool.Parse(Console.ReadLine());
+            Console.Write("Division Id: ");
+            sr.DivisionId = int.Parse(Console.ReadLine());
+            Console.Write("Special Id: ");
+            sr.SpecialId = int.Parse(Console.ReadLine());
             Console.Write("Weapon Name: ");
             sr.WeaponName = Console.ReadLine();
+            Console.Write("Weapon Power Id: ");
+            sr.WeaponPowerId = int.Parse(Console.ReadLine());
+            Console.Write("Description: ");
+            sr.Description = Console.ReadLine();
             sRRBusiness.Add(sr);
             Console.WriteLine("The Soul Reaper has been added!");
         }
@@ -95,17 +107,28 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SoulReapers product = sRRBusiness.Get(id);
-            if (product != null)
+            SoulReapers sr = sRRBusiness.Get(id);
+            if (sr != null)
             {
-                Console.WriteLine($"{product.SRId} {product.FirstName} {product.LastName} {product.WeaponName}");
+                Console.WriteLine($"{sr.SRId} {sr.FirstName} {sr.LastName} {sr.WeaponName}");
                 Console.Write("First Name: ");
-                product.FirstName = Console.ReadLine();
+                sr.FirstName = Console.ReadLine();
                 Console.Write("Last Name: ");
-                product.LastName = Console.ReadLine();
+                sr.LastName = Console.ReadLine();
+                Console.Write("Enroll Date: ");
+                sr.EnrollDate = DateTime.Parse(Console.ReadLine());
+                Console.Write("Available: ");
+                sr.Available = bool.Parse(Console.ReadLine());
+                Console.Write("Division Id: ");
+                sr.DivisionId = int.Parse(Console.ReadLine());
+                Console.Write("Special Id: ");
+                sr.SpecialId = int.Parse(Console.ReadLine());
                 Console.Write("Weapon Name: ");
-                product.WeaponName = Console.ReadLine();
-                sRRBusiness.Update(product);
+                sr.WeaponName = Console.ReadLine();
+                Console.Write("Weapon Power Id: ");
+                sr.WeaponPowerId = int.Parse(Console.ReadLine());
+                Console.Write("Description: ");
+                sRRBusiness.Update(sr);
                 Console.WriteLine("The Soul Reaper has been updated!");
             }
             else
@@ -125,7 +148,9 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("ID: " + product.SRId);
                 Console.WriteLine("Name: " + product.FirstName);
                 Console.WriteLine("Last Name: " + product.LastName);
+
                 Console.WriteLine("Weapon Name: " + product.WeaponName);
+
                 Console.WriteLine(new string('-', 40));
             }
             else
