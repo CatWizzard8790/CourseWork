@@ -67,9 +67,12 @@ namespace SRRAppConsole.Presentation
 
         private void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(new string(' ', 18) + "SR");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('=', 40));
+            Console.WriteLine(@"  __              _                       
+ (_   _      |   |_)  _   _. ._   _  ._ _ 
+ __) (_) |_| |   | \ (/_ (_| |_) (/_ | _> 
+                             |            ");
+            Console.WriteLine(new string('=', 40));
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
