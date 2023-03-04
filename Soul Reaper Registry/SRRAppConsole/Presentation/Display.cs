@@ -16,9 +16,9 @@ namespace SRRAppConsole.Presentation
 
         private void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 80));
             Console.WriteLine(new string(' ', 18) + "Soul Reaper Registry");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 80));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
