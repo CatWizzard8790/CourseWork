@@ -364,3 +364,5 @@ FodyWeavers.xsd
 .obj
 .bin
 .vs
+/Soul Reaper Registry/Data/obj
+/Soul Reaper Registry/SRRAppConsole/obj
