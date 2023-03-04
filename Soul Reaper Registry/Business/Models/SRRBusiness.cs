@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Data;
 using Data.Models;
 
-namespace Business
+namespace Business.Models
 {
     public class SRRBusiness
     {
