@@ -166,7 +166,7 @@ namespace Data.Migrations
                     b.ToTable("SoulReapers");
                 });
 
-            modelBuilder.Entity("Data.Models.SoulReapersMissions", b =>
+            modelBuilder.Entity("Data.Models.MissionsSoulReapers", b =>
                 {
                     b.Property<int>("SRId")
                         .ValueGeneratedOnAdd()
@@ -178,7 +178,7 @@ namespace Data.Migrations
 
                     b.HasKey("SRId");
 
-                    b.ToTable("SoulReapersMissions");
+                    b.ToTable("MissionsSoulReapers");
                 });
 
             modelBuilder.Entity("Data.Models.SpecialDivisions", b =>
