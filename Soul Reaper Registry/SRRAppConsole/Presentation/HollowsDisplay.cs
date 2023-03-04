@@ -14,7 +14,8 @@ namespace SRRAppConsole.Presentation
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Hollows ");
+            Console.WriteLine(@" |_|  _  | |  _        _ 
+ | | (_) | | (_) \/\/ _> ");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
