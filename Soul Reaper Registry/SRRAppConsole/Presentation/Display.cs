@@ -16,9 +16,16 @@ namespace SRRAppConsole.Presentation
 
         private void ShowMenu()
         {
-            Console.WriteLine(new string('-', 80));
-            Console.WriteLine(new string(' ', 18) + "Soul Reaper Registry");
-            Console.WriteLine(new string('-', 80));
+            Console.WriteLine(new string('=', 100));
+            Console.WriteLine(@"   _____             _   _____                              _____            _     _              
+  / ____|           | | |  __ \                            |  __ \          (_)   | |             
+ | (___   ___  _   _| | | |__) |___  __ _ _ __   ___ _ __  | |__) |___  __ _ _ ___| |_ _ __ _   _ 
+  \___ \ / _ \| | | | | |  _  // _ \/ _` | '_ \ / _ | '__| |  _  // _ \/ _` | / __| __| '__| | | |
+  ____) | (_) | |_| | | | | \ |  __| (_| | |_) |  __| |    | | \ |  __| (_| | \__ | |_| |  | |_| |
+ |_____/ \___/ \__,_|_| |_|  \_\___|\__,_| .__/ \___|_|    |_|  \_\___|\__, |_|___/\__|_|   \__, |
+                                         | |                            __/ |                __/ |
+                                         |_|                           |___/                |___/ ");
+            Console.WriteLine(new string('=', 100));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
@@ -73,14 +80,14 @@ namespace SRRAppConsole.Presentation
 
         private void Add()
         {
-            SoulReapers product = new SoulReapers();
+            SoulReapers sr = new SoulReapers();
             Console.Write("First Name: ");
-            product.FirstName = Console.ReadLine();
+            sr.FirstName = Console.ReadLine();
             Console.Write("Last Name: ");
-            product.LastName = Console.ReadLine();
+            sr.LastName = Console.ReadLine();
             Console.Write("Weapon Name: ");
-            product.WeaponName = Console.ReadLine();
-            sRRBusiness.Add(product);
+            sr.WeaponName = Console.ReadLine();
+            sRRBusiness.Add(sr);
             Console.WriteLine("The Soul Reaper has been added!");
         }
 
@@ -92,7 +99,7 @@ namespace SRRAppConsole.Presentation
             if (product != null)
             {
                 Console.WriteLine($"{product.SRId} {product.FirstName} {product.LastName} {product.WeaponName}");
-                Console.Write("Name: ");
+                Console.Write("First Name: ");
                 product.FirstName = Console.ReadLine();
                 Console.Write("Last Name: ");
                 product.LastName = Console.ReadLine();
