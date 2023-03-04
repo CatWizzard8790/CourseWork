@@ -94,16 +94,16 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine($"{product.SRId} {product.FirstName} {product.LastName} {product.WeaponName}");
                 Console.Write("Name: ");
                 product.FirstName = Console.ReadLine();
-                Console.Write("Price: ");
+                Console.Write("Last Name: ");
                 product.LastName = Console.ReadLine();
-                Console.Write("Stock: ");
+                Console.Write("Weapon Name: ");
                 product.WeaponName = Console.ReadLine();
                 sRRBusiness.Update(product);
-                Console.WriteLine("The product has been updated!");
+                Console.WriteLine("The Soul Reaper has been updated!");
             }
             else
             {
-                Console.WriteLine("Product not found!");
+                Console.WriteLine("Soul Reaper not found!");
             }
         }
 
@@ -117,13 +117,13 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine(new string('-', 40));
                 Console.WriteLine("ID: " + product.SRId);
                 Console.WriteLine("Name: " + product.FirstName);
-                Console.WriteLine("Price: " + product.LastName);
-                Console.WriteLine("Stock: " + product.WeaponName);
+                Console.WriteLine("Last Name: " + product.LastName);
+                Console.WriteLine("Weapon Name: " + product.WeaponName);
                 Console.WriteLine(new string('-', 40));
             }
             else
             {
-                Console.WriteLine("Product not found!");
+                Console.WriteLine("Soul Reaper not found!");
             }
         }
 
@@ -135,11 +135,11 @@ namespace SRRAppConsole.Presentation
             if (product != null)
             {
                 sRRBusiness.Delete(id);
-                Console.WriteLine("The product has been deleted!");
+                Console.WriteLine("The Soul Reaper has been deleted!");
             }
             else
             {
-                Console.WriteLine("Product not found!");
+                Console.WriteLine("Soul Reaper not found!");
             }
         }
     }
