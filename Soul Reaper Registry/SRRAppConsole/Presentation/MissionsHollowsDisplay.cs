@@ -14,7 +14,11 @@ namespace SRRAppConsole.Presentation
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Missions Hollows ");
+            Console.WriteLine(@"  __  __ _         _                   _   _       _ _                   
+ |  \/  (_)___ ___(_) ___  _ __  ___  | | | | ___ | | | _____      _____ 
+ | |\/| | / __/ __| |/ _ \| '_ \/ __| | |_| |/ _ \| | |/ _ \ \ /\ / / __|
+ | |  | | \__ \__ \ | (_) | | | \__ \ |  _  | (_) | | | (_) \ V  V /\__ \
+ |_|  |_|_|___/___/_|\___/|_| |_|___/ |_| |_|\___/|_|_|\___/ \_/\_/ |___/");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
@@ -26,7 +30,8 @@ namespace SRRAppConsole.Presentation
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Missions Hollows ");
+            Console.WriteLine(@" |\/| o  _  _ o  _  ._   _  |_|  _  | |  _        _ 
+ |  | | _> _> | (_) | | _>  | | (_) | | (_) \/\/ _> ");
             Console.WriteLine(new string('-', 40));
             var misH = missHBusiness.GetAll();
             foreach (var item in misH)

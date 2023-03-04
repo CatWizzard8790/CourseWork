@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,45 +10,59 @@ namespace SRRAppConsole.Presentation
     public abstract class Display
     {
         private int closeOperationId = 6;
+        private int operation = -1;
         public Display()
         {
             Input();
         }
-        public virtual void ShowMenu() {}
+        public virtual void ShowMenu() { }
         public void Input()
         {
-            var operation = -1;
             do
             {
-                ShowMenu();
-                operation = int.Parse(Console.ReadLine());
-                switch (operation)
+                if (operation != closeOperationId)
                 {
-                    case 1:
-                        ListAll();
-                        break;
-                    case 2:
-                        Add();
-                        break;
-                    case 3:
-                        Update();
-                        break;
-                    case 4:
-                        Fetch();
-                        break;
-                    case 5:
-                        Delete();
-                        break;
-                    case 6:
-                        StartUp.MainMenu();
-                        break;
-                    default:
-                        break;
+                    ShowMenu();
+                    operation = int.Parse(Console.ReadLine());
+                    switch (operation)
+                    {
+                        case 1:
+                            ListAll();
+                            break;
+                        case 2:
+                            Add();
+                            break;
+                        case 3:
+                            Update();
+                            break;
+                        case 4:
+                            Fetch();
+                            break;
+                        case 5:
+                            Delete();
+                            break;
+                        case 6:
+                           // StartUp.MainMenu();
+                            break;
+                        default:
+                            break;
+                    }
                 }
-                Console.WriteLine("Press any key..."); Console.ReadKey(); Console.Clear();
+                else
+                {
+                    Console.Clear();
+                }
+
+                if (operation != closeOperationId)
+                {
+                    Console.WriteLine("Press any key...");
+                    Console.ReadKey();
+                    Console.Clear();
+                }
             } while (operation != closeOperationId);
+
         }
-        public virtual void ListAll(){}
+        public virtual void ListAll() { }
         public static bool EmptyStringChecker(string input)
         {
             if (string.IsNullOrWhiteSpace(input))

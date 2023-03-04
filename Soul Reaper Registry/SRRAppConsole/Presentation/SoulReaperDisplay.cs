@@ -7,6 +7,7 @@ namespace SRRAppConsole.Presentation
     public class SoulReaperDisplay : Display
     {
         SRRBusiness sRRBusiness = new SRRBusiness();
+        private int endOperation = 6;
 
         public SoulReaperDisplay()
         {
@@ -15,14 +16,14 @@ namespace SRRAppConsole.Presentation
 
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 60));
             Console.WriteLine(@"  ____              _   ____                                
  / ___|  ___  _   _| | |  _ \ ___  __ _ _ __   ___ _ __ ___ 
  \___ \ / _ \| | | | | | |_) / _ \/ _` | '_ \ / _ \ '__/ __|
   ___) | (_) | |_| | | |  _ <  __/ (_| | |_) |  __/ |  \__ \
  |____/ \___/ \__,_|_| |_| \_\___|\__,_| .__/ \___|_|  |___/
                                        |_|                  ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 60));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
