@@ -127,7 +127,7 @@ namespace SRRAppConsole.Presentation
             SoulReapers sr = sRRBusiness.Get(id);
             if (sr != null)
             {
-                Console.WriteLine($"{sr.SRId} {sr.FirstName} {sr.LastName} {sr.WeaponName}");
+                Console.WriteLine($"{sr.SRId} {sr.FirstName} {sr.LastName} {sr.EnrollDate}{sr.Available} {sr.DivisionId} {sr.SpecialId} {sr.WeaponName} {sr.WeaponPowerId} {sr.Description}");
                 Console.Write("First Name: ");
                 sr.FirstName = Console.ReadLine();
                 Console.Write("Last Name: ");
