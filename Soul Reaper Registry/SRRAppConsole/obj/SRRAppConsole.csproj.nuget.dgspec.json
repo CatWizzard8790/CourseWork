@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj": {}
+    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj": {}
   },
   "projects": {
-    "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj": {
+    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj",
+        "projectUniqueName": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj",
-        "packagesPath": "C:\\Users\\Ivana\\.nuget\\packages\\",
-        "outputPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Business\\obj\\",
+        "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj",
+        "packagesPath": "C:\\Users\\Student KK1\\.nuget\\packages\\",
+        "outputPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student KK1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -31,8 +32,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj": {
-                "projectPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj"
+              "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj": {
+                "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj"
               }
             }
           }
@@ -68,8 +69,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -78,24 +78,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj": {
+    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj",
+        "projectUniqueName": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj",
-        "packagesPath": "C:\\Users\\Ivana\\.nuget\\packages\\",
-        "outputPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\obj\\",
+        "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj",
+        "packagesPath": "C:\\Users\\Student KK1\\.nuget\\packages\\",
+        "outputPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student KK1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -142,8 +143,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -152,24 +152,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj": {
+    "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj",
+        "projectUniqueName": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj",
         "projectName": "SRRAppConsole",
-        "projectPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj",
-        "packagesPath": "C:\\Users\\Ivana\\.nuget\\packages\\",
-        "outputPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\obj\\",
+        "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\SRRAppConsole.csproj",
+        "packagesPath": "C:\\Users\\Student KK1\\.nuget\\packages\\",
+        "outputPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\SRRAppConsole\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Ivana\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student KK1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -183,11 +184,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj": {
-                "projectPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj"
+              "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj": {
+                "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Business\\Business.csproj"
               },
-              "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj": {
-                "projectPath": "E:\\Git- It Career\\IT-Career\\Year 2\\Modul07\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj"
+              "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj": {
+                "projectPath": "E:\\modul 7\\Course Work\\CourseWork\\Soul Reaper Registry\\Data\\Data.csproj"
               }
             }
           }
@@ -223,8 +224,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -233,7 +233,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.411\\RuntimeIdentifierGraph.json"
         }
       }
     }
