@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
-    public class HollowClasificationDisplay : Display
+    public class HollowClassificationDisplay : Display
     {
         HCBusiness hCBusiness = new HCBusiness();
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Hollow Clasification ");
+            Console.WriteLine(@"                         _                 _                        
+ |_|  _  | |  _         /  |  _.  _  _ o _|_ o  _  _. _|_ o  _  ._  
+ | | (_) | | (_) \/\/   \_ | (_| _> _> |  |  | (_ (_|  |_ | (_) | | ");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
@@ -26,7 +28,9 @@ namespace SRRAppConsole.Presentation
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Hollow Clasification ");
+            Console.WriteLine(@"                         _                 _                        
+ |_|  _  | |  _         /  |  _.  _  _ o _|_ o  _  _. _|_ o  _  ._  
+ | | (_) | | (_) \/\/   \_ | (_| _> _> |  |  | (_ (_|  |_ | (_) | | ");
             Console.WriteLine(new string('-', 40));
             var hcs = hCBusiness.GetAll();
             foreach (var item in hcs)
@@ -37,16 +41,16 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            HollowClassifications Hollows = new HollowClassifications();
+            HollowClassifications hollowClassifications = new HollowClassifications();
 
             Console.Write("Name: ");
-            Hollows.Name = Console.ReadLine();            
+            hollowClassifications.Name = Console.ReadLine();            
 
             Console.Write("Description: ");
             data = Console.ReadLine();
-            if (EmptyStringChecker(data)) Hollows.Description = data;
+            if (EmptyStringChecker(data)) hollowClassifications.Description = data;
 
-            hCBusiness.Add(Hollows);
+            hCBusiness.Add(hollowClassifications);
             Console.WriteLine("The Hollow Classification has been added!");
         }
         public override void Update()
@@ -81,7 +85,7 @@ namespace SRRAppConsole.Presentation
             {
                 Console.WriteLine(new string('-', 40));
 
-                Console.WriteLine("ID: " + hcs.HCId);
+                Console.WriteLine("Id: " + hcs.HCId);
                 Console.WriteLine("Name: " + hcs.Name);
                 Console.WriteLine("Description: " + hcs.Description);
 
