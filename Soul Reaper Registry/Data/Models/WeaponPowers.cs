@@ -14,9 +14,11 @@ namespace Data.Models
     {
         [Key]
         public int WPId { get; set; }
+
         public string FirstForm { get; set; }
         public string SecondForm { get; set; }
         public PowerType PType { get; set; }
+        public string Description { get; set; }
 
     }
 }

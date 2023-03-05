@@ -90,7 +90,7 @@ namespace SRRAppConsole.Presentation
         }
         public override void Fetch()
         {
-            Console.Write("Enter Ids: ");
+            Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
             SpecialDivisions SPDs = sPDBusiness.Get(id);
             if (SPDs != null)
