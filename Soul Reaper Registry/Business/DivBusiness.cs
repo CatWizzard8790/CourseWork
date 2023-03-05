@@ -28,12 +28,12 @@ namespace Business
             }
         }
 
-        public void Add(SoulReapers product)
+        public void Add(Divisions product)
         {
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.SoulReapers.Add(product);
+                sRRContext.Divisions.Add(product);
                 sRRContext.SaveChanges();
             }
         }

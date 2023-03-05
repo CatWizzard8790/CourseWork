@@ -26,7 +26,7 @@ namespace SRRAppConsole.Presentation
             Console.WriteLine("3. Update entry");
             Console.WriteLine("4. Fetch entry by ID");
             Console.WriteLine("5. Delete entry by ID");
-            Console.WriteLine("6. Exit entry");
+            Console.WriteLine("6. Go back to main menu");
 
         }
         public override void ListAll()
@@ -40,7 +40,7 @@ namespace SRRAppConsole.Presentation
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
-                Console.WriteLine($"{item.SRId} {item.FirstName} {item.LastName} {item.EnrollDate}{item.Available} {item.DivisionId} {item.SpecialId} {item.WeaponName} {item.WeaponPowerId} {item.Description}");
+                Console.WriteLine($"Id: { item.SRId}| First Name: { item.FirstName}| Last Name: { item.LastName}| EnrollDate: { item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|");
             }
 
         }
@@ -48,29 +48,39 @@ namespace SRRAppConsole.Presentation
         {
             string data;
             SoulReapers sr = new SoulReapers();
+
             Console.Write("First Name: ");
             sr.FirstName = Console.ReadLine();
+
             Console.Write("Last Name: ");
             sr.LastName = Console.ReadLine();
+
             Console.Write("Enroll Date: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.EnrollDate = DateTime.Parse(data);
+
             Console.Write("Available: ");
             sr.Available = bool.Parse(Console.ReadLine());
+
             Console.Write("Division Id: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.DivisionId = int.Parse(data);
+
             Console.Write("Special Id: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.SpecialId = int.Parse(data);
+
             Console.Write("Weapon Name: ");
             sr.WeaponName = Console.ReadLine();
+
             Console.Write("Weapon Power Id: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.WeaponPowerId = int.Parse(data);
+
             Console.Write("Description: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.Description = data;
+
             sRRBusiness.Add(sr);
             Console.WriteLine("The Soul Reaper has been added!");
         }
@@ -81,31 +91,41 @@ namespace SRRAppConsole.Presentation
             SoulReapers sr = sRRBusiness.Get(id);
             if (sr != null)
             {
-                Console.WriteLine($"{sr.SRId} {sr.FirstName} {sr.LastName} {sr.EnrollDate}{sr.Available} {sr.DivisionId} {sr.SpecialId} {sr.WeaponName} {sr.WeaponPowerId} {sr.Description}");
+                Console.WriteLine($"Id: { sr.SRId}| First Name: { sr.FirstName}| Last Name: { sr.LastName}| EnrollDate: { sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
                 string data;
+
                 Console.Write("First Name: ");
                 sr.FirstName = Console.ReadLine();
+
                 Console.Write("Last Name: ");
                 sr.LastName = Console.ReadLine();
+
                 Console.Write("Enroll Date: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.EnrollDate = DateTime.Parse(data);
+
                 Console.Write("Available: ");
                 sr.Available = bool.Parse(Console.ReadLine());
+
                 Console.Write("Division Id: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.DivisionId = int.Parse(data);
+
                 Console.Write("Special Id: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.SpecialId = int.Parse(data);
+
                 Console.Write("Weapon Name: ");
                 sr.WeaponName = Console.ReadLine();
+
                 Console.Write("Weapon Power Id: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.WeaponPowerId = int.Parse(data);
+
                 Console.Write("Description: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.Description = data;
+
                 sRRBusiness.Update(sr);
                 Console.WriteLine("The Soul Reaper has been updated!");
             }
