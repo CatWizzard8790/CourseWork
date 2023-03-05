@@ -10,7 +10,7 @@ namespace Data.Models
     /// <summary>
     /// Intermediate table for SoulReapers and Missions, allowing the Many to Many relation.
     /// </summary>
-    public class SoulReapersMissions
+    public class MissionsSoulReapers
     {
         [Key]
         public int SRId { get; set; }
