@@ -45,12 +45,90 @@ namespace SRRAppConsole.Presentation
             Console.Write("Class Id");
             hollows.ClassId = int.Parse(Console.ReadLine());
 
+            Console.Write("Alive: ");
+            hollows.Alive = bool.Parse(Console.ReadLine());
+
+            Console.Write("Weapon Power Id: ");
+            data = Console.ReadLine();
+            if (EmptyStringChecker(data)) hollows.WeaponPowerId = int.Parse(data);
+
             Console.Write("Description: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) hollows.Description = data;
 
             hBusiness.Add(hollows);
             Console.WriteLine("The Hollow has been added!");
+        }
+        public override void Update()
+        {
+            string data;
+            Console.Write("Id: ");
+            int id = int.Parse(Console.ReadLine());
+            Hollows hollow = hBusiness.Get(id);
+            if (hollow != null)
+            {
+                Console.Write("Name: ");
+                hollow.Name = Console.ReadLine();
+
+                Console.Write("Class Id");
+                hollow.ClassId = int.Parse(Console.ReadLine());
+
+                Console.Write("Alive: ");
+                hollow.Alive = bool.Parse(Console.ReadLine());
+
+                Console.Write("Weapon Power Id: ");
+                data = Console.ReadLine();
+                if (EmptyStringChecker(data)) hollow.WeaponPowerId = int.Parse(data);
+
+                Console.Write("Description: ");
+                data = Console.ReadLine();
+                if (EmptyStringChecker(data)) hollow.Description = data;
+
+                hBusiness.Update(hollow);
+                Console.WriteLine("The Hollow has been updated!");
+            }
+            else
+            {
+                Console.WriteLine("Hollow not found!");
+            }
+        }
+        public override void Fetch()
+        {
+            Console.Write("Id: ");
+            int id = int.Parse(Console.ReadLine());
+            Hollows hcs = hBusiness.Get(id);
+            if (hcs != null)
+            {
+                Console.WriteLine(new string('-', 40));
+
+                Console.WriteLine("ID: " + hcs.HId);
+                Console.WriteLine("Name: " + hcs.Name);
+                Console.WriteLine("Class Id: " + hcs.ClassId);
+                Console.WriteLine("Alive: " + hcs.Alive);
+                Console.WriteLine("WeaPon Power Id: " + hcs.WeaponPowerId);
+                Console.WriteLine("Description: " + hcs.Description);
+
+                Console.WriteLine(new string('-', 40));
+            }
+            else
+            {
+                Console.WriteLine("Hollow not found!");
+            }
+        }
+        public override void Delete()
+        {
+            Console.Write("Id: ");
+            int id = int.Parse(Console.ReadLine());
+            Hollows hollow = hBusiness.Get(id);
+            if (hollow != null)
+            {
+                hBusiness.Delete(id);
+                Console.WriteLine("The Hollow has been deleted!");
+            }
+            else
+            {
+                Console.WriteLine("Hollow not found!");
+            }
         }
     }
 }
