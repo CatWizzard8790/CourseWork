@@ -1,48 +1,48 @@
-﻿using System;
+﻿using Data.Models;
+using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Data;
-using Data.Models;
 
-namespace Business
+namespace Business.Models
 {
-    public class SRRBusiness
+    public class SPDivBusiness
     {
         private SRRContext sRRContext;
 
-        public List<SoulReapers> GetAll()
+        public List<SpecialDivisions> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SoulReapers.ToList();
+                return sRRContext.SpecialDivisions.ToList();
             }
         }
 
-        public SoulReapers Get(int id)
+        public SpecialDivisions Get(int id)
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SoulReapers.Find(id);
+                return sRRContext.SpecialDivisions.Find(id);
             }
         }
 
-        public void Add(SoulReapers product)
+        public void Add(SpecialDivisions product)
         {
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.SoulReapers.Add(product);
+                sRRContext.SpecialDivisions.Add(product);
                 sRRContext.SaveChanges();
             }
         }
 
-        public void Update(SoulReapers product)
+        public void Update(SpecialDivisions product)
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.SoulReapers.Find(product.SRId);
+                var item = sRRContext.SpecialDivisions.Find(product.SDId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -55,13 +55,14 @@ namespace Business
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.SoulReapers.Find(id);
+                var item = sRRContext.SpecialDivisions.Find(id);
                 if (item != null)
                 {
-                    sRRContext.SoulReapers.Remove(item);
+                    sRRContext.SpecialDivisions.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }
         }
     }
 }
+

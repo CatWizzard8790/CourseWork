@@ -27,7 +27,7 @@ namespace SRRAppConsole
                         display = new DivisionDisplay();
                         break;
                     case 3:
-                        //SpecialDivisionDisplay sdd = new SpecialDivisionDisplay(); 
+                        SpecialDivisionDisplay sdd = new SpecialDivisionDisplay(); 
                         break;
                     case 4:
                         

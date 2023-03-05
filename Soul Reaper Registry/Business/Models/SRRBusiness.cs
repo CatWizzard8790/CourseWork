@@ -1,48 +1,48 @@
-﻿using Data.Models;
-using Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data;
+using Data.Models;
 
-namespace Business
+namespace Business.Models
 {
-    public class DivBusiness
+    public class SRRBusiness
     {
         private SRRContext sRRContext;
 
-        public List<Divisions> GetAll()
+        public List<SoulReapers> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.Divisions.ToList();
+                return sRRContext.SoulReapers.ToList();
             }
         }
 
-        public Divisions Get(int id)
+        public SoulReapers Get(int id)
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.Divisions.Find(id);
+                return sRRContext.SoulReapers.Find(id);
             }
         }
 
-        public void Add(Divisions product)
+        public void Add(SoulReapers product)
         {
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.Divisions.Add(product);
+                sRRContext.SoulReapers.Add(product);
                 sRRContext.SaveChanges();
             }
         }
 
-        public void Update(Divisions product)
+        public void Update(SoulReapers product)
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.Divisions.Find(product.DivisionNumber);
+                var item = sRRContext.SoulReapers.Find(product.SRId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -55,10 +55,10 @@ namespace Business
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.Divisions.Find(id);
+                var item = sRRContext.SoulReapers.Find(id);
                 if (item != null)
                 {
-                    sRRContext.Divisions.Remove(item);
+                    sRRContext.SoulReapers.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

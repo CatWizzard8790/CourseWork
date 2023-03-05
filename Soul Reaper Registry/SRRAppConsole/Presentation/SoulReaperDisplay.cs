@@ -1,5 +1,5 @@
 ﻿using System;
-using Business;
+using Business.Models;
 using Data.Models;
 
 namespace SRRAppConsole.Presentation
