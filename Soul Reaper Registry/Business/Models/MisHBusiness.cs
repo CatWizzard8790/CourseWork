@@ -20,11 +20,11 @@ namespace Business.Models
             }
         }
 
-        public MissionsHollows Get(int id)
+        public MissionsHollows Get(int id1, int id2)
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.MissionsHollows.Find(id);
+                return sRRContext.MissionsHollows.FirstOrDefault(x => x.HollowsId == id1 && x.MissionsId == id2); ;
             }
         }
 

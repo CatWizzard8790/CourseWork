@@ -105,7 +105,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SoulReapersMissions",
+                name: "MissionsSoulReapers",
                 columns: table => new
                 {
                     SRId = table.Column<int>(type: "int", nullable: false)
@@ -170,7 +170,7 @@ namespace Data.Migrations
                 name: "SoulReapers");
 
             migrationBuilder.DropTable(
-                name: "SoulReapersMissions");
+                name: "MissionsSoulReapers");
 
             migrationBuilder.DropTable(
                 name: "SpecialDivisions");
