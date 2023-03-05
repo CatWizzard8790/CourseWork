@@ -13,11 +13,13 @@ namespace SRRAppConsole.Presentation
         HCBusiness hCBusiness = new HCBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@"                         _                 _                        
- |_|  _  | |  _         /  |  _.  _  _ o _|_ o  _  _. _|_ o  _  ._  
- | | (_) | | (_) \/\/   \_ | (_| _> _> |  |  | (_ (_|  |_ | (_) | | ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 95));
+            Console.WriteLine(@"  _   _       _ _                  ____ _               _  __ _           _   _             
+ | | | | ___ | | | _____      __  / ___| | __ _ ___ ___(_)/ _(_) ___ __ _| |_(_) ___  _ __  
+ | |_| |/ _ \| | |/ _ \ \ /\ / / | |   | |/ _` / __/ __| | |_| |/ __/ _` | __| |/ _ \| '_ \ 
+ |  _  | (_) | | | (_) \ V  V /  | |___| | (_| \__ \__ \ |  _| | (_| (_| | |_| | (_) | | | |
+ |_| |_|\___/|_|_|\___/ \_/\_/    \____|_|\__,_|___/___/_|_| |_|\___\__,_|\__|_|\___/|_| |_|");
+            Console.WriteLine(new string('-', 95));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
@@ -27,11 +29,11 @@ namespace SRRAppConsole.Presentation
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 70));
             Console.WriteLine(@"                         _                 _                        
  |_|  _  | |  _         /  |  _.  _  _ o _|_ o  _  _. _|_ o  _  ._  
  | | (_) | | (_) \/\/   \_ | (_| _> _> |  |  | (_ (_|  |_ | (_) | | ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 70));
             var hcs = hCBusiness.GetAll();
             foreach (var item in hcs)
             {

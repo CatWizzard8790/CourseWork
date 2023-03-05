@@ -14,9 +14,13 @@ namespace SRRAppConsole
         MisBusiness misBusiness = new MisBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Missions ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 30));
+            Console.WriteLine(@"  __  __ _         _                 
+ |  \/  (_)___ ___(_) ___  _ __  ___ 
+ | |\/| | / __/ __| |/ _ \| '_ \/ __|
+ | |  | | \__ \__ \ | (_) | | | \__ \
+ |_|  |_|_|___/___/_|\___/|_| |_|___/");
+            Console.WriteLine(new string('-', 30));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
@@ -26,9 +30,10 @@ namespace SRRAppConsole
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Missions ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 30));
+            Console.WriteLine(@" |\/| o  _  _ o  _  ._   _ 
+ |  | | _> _> | (_) | | _> ");
+            Console.WriteLine(new string('-', 30));
             var miss = misBusiness.GetAll();
             foreach (var item in miss)
             {

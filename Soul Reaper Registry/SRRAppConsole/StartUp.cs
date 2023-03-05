@@ -27,13 +27,25 @@ namespace SRRAppConsole
                         display = new DivisionDisplay();
                         break;
                     case 3:
-                        SpecialDivisionsDisplay sdd = new SpecialDivisionsDisplay(); 
+                         display = new SpecialDivisionsDisplay(); 
                         break;
                     case 4:
                         
                         break;
                     case 5:
-                        
+                        display = new HollowsDisplay();
+                        break;
+                    case 6:
+                        display = new HollowClassificationDisplay();
+                        break;
+                    case 7:
+//                        display = ;
+                        break;
+                    case 8:
+                       // display = ;
+                        break;
+                    case 9:
+                        display = new MissionsDisplay();
                         break;
                     default:
                         break;

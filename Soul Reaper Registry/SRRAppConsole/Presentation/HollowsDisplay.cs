@@ -13,10 +13,13 @@ namespace SRRAppConsole.Presentation
         HBusiness hBusiness = new HBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" |_|  _  | |  _        _ 
- | | (_) | | (_) \/\/ _> ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 35));
+            Console.WriteLine(@"  _   _       _ _                   
+ | | | | ___ | | | _____      _____ 
+ | |_| |/ _ \| | |/ _ \ \ /\ / / __|
+ |  _  | (_) | | | (_) \ V  V /\__ \
+ |_| |_|\___/|_|_|\___/ \_/\_/ |___/");
+            Console.WriteLine(new string('-', 35));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
@@ -26,9 +29,10 @@ namespace SRRAppConsole.Presentation
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Hollows ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 25));
+            Console.WriteLine(@" |_|  _  | |  _        _ 
+ | | (_) | | (_) \/\/ _> ");
+            Console.WriteLine(new string('-', 25));
             var hcs = hBusiness.GetAll();
             foreach (var item in hcs)
             {
