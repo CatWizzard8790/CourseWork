@@ -14,7 +14,7 @@ namespace SRRAppConsole
         static void Main(string[] args)
         {
             var operation = -1;
-            int closeOperationId = 9;
+            int closeOperationId = 10;
             do
             {
                 if (operation != closeOperationId)
@@ -35,7 +35,7 @@ namespace SRRAppConsole
                             display = new SpecialDivisionsDisplay();
                             break;
                         case 4:
-                            display = new SpecialDivisionsDisplay();
+                            display = new WeaponPowersDisplay();
                             break;
                         case 5:
                             display = new HollowsDisplay();
@@ -44,13 +44,13 @@ namespace SRRAppConsole
                             display = new HollowClassificationDisplay();
                             break;
                         case 7:
-                            display = new HollowClassificationDisplay();
+                            display = new MissionsSoulReapersDisplay();
                             break;
                         case 8:
                             display = new MissionsHollowsDisplay();
                             break;
                         case 9:
-                            // display = new MissionsDisplay();
+                            display = new MissionsDisplay();
                             break;
                         case 10:
                             Environment.Exit(0);
