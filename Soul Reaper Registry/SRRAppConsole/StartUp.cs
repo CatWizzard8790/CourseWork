@@ -35,7 +35,7 @@ namespace SRRAppConsole
                             display = new SpecialDivisionsDisplay();
                             break;
                         case 4:
-                            display = new SpecialDivisionsDisplay();
+                            display = new WeaponPowersDisplay();
                             break;
                         case 5:
                             display = new HollowsDisplay();
@@ -50,7 +50,7 @@ namespace SRRAppConsole
                             display = new MissionsHollowsDisplay();
                             break;
                         case 9:
-                            // display = new MissionsDisplay();
+                            display = new MissionsDisplay();
                             break;
                         case 10:
                             Environment.Exit(0);
