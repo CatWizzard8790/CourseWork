@@ -14,7 +14,7 @@ namespace Business.Models
 
         private SRRContext sRRContext;
 
-        public List<Missions> GetAll()
+        public List<Mission> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
@@ -22,7 +22,7 @@ namespace Business.Models
             }
         }
 
-        public Missions Get(int id)
+        public Mission Get(int id)
         {
             using (sRRContext = new SRRContext())
             {
@@ -30,7 +30,7 @@ namespace Business.Models
             }
         }
 
-        public void Add(Missions product)
+        public void Add(Mission product)
         {
 
             using (sRRContext = new SRRContext())
@@ -40,7 +40,7 @@ namespace Business.Models
             }
         }
 
-        public void Update(Missions product)
+        public void Update(Mission product)
         {
             using (sRRContext = new SRRContext())
             {

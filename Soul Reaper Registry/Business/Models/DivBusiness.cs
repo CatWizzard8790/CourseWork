@@ -12,7 +12,7 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
-        public List<Divisions> GetAll()
+        public List<Division> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
@@ -20,7 +20,7 @@ namespace Business.Models
             }
         }
 
-        public Divisions Get(int id)
+        public Division Get(int id)
         {
             using (sRRContext = new SRRContext())
             {
@@ -28,7 +28,7 @@ namespace Business.Models
             }
         }
 
-        public void Add(Divisions product)
+        public void Add(Division product)
         {
 
             using (sRRContext = new SRRContext())
@@ -38,7 +38,7 @@ namespace Business.Models
             }
         }
 
-        public void Update(Divisions product)
+        public void Update(Division product)
         {
             using (sRRContext = new SRRContext())
             {

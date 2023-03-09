@@ -32,25 +32,25 @@ namespace SRRAppConsole
                             display = new DivisionDisplay();
                             break;
                         case 3:
-                            display = new SpecialDivisionsDisplay();
+                            display = new SpecialDivisionDisplay();
                             break;
                         case 4:
-                            display = new WeaponPowersDisplay();
+                            display = new WeaponPowerDisplay();
                             break;
                         case 5:
-                            display = new HollowsDisplay();
+                            display = new HollowDisplay();
                             break;
                         case 6:
                             display = new HollowClassificationDisplay();
                             break;
                         case 7:
-                            display = new MissionsSoulReapersDisplay();
+                            display = new MissionSoulReaperDisplay();
                             break;
                         case 8:
-                            display = new MissionsHollowsDisplay();
+                            display = new MissionHollowDisplay();
                             break;
                         case 9:
-                            display = new MissionsDisplay();
+                            display = new MissionDisplay();
                             break;
                         case 10:
                             Environment.Exit(0);

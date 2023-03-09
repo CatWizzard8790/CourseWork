@@ -44,7 +44,7 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            Divisions product = new Divisions();
+            Division product = new Division();
 
             Console.Write("Name: ");
             product.Name = Console.ReadLine();
@@ -68,7 +68,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Divisions sr = divBusiness.Get(id);
+            Division sr = divBusiness.Get(id);
             if (sr != null)
             {
                 Console.WriteLine($"Id: {sr.DivisionNumber}| Name: {sr.Name}| Captain Id : {sr.CaptainId}| Lieutenant Id :{sr.LieutenantId}| Description : {sr.Description}|");
@@ -101,7 +101,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Divisions sr = divBusiness.Get(id);
+            Division sr = divBusiness.Get(id);
             if (sr != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -122,7 +122,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Divisions product = divBusiness.Get(id);
+            Division product = divBusiness.Get(id);
             if (product != null)
             {
                 divBusiness.Delete(id);

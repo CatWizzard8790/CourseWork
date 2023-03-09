@@ -10,7 +10,7 @@ namespace Data.Models
     /// <summary>
     /// A Special Division is a group of Soul Reapers that is different from the Thirteen Court Guard Squads(class Divisions). It contains the name of the Special Division, miscellaneous information and it could have a leader and be independent of one of the main 13 divisions. If the leader is a captain of a Division, all members fall under that Division.
     /// </summary>
-    public class SpecialDivisions
+    public class SpecialDivision
     {
         [Key]
         public int SDId { get; set; }

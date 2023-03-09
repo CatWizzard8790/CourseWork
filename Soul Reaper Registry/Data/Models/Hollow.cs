@@ -11,7 +11,7 @@ namespace Data.Models
     /// Hollows are a race of creatures which are born from Human souls and have a name and a class- depending on the stage that it has evolved to. Their "Alive" status can change- depending on wheither or not they were involved in the table "Missions".
     /// Not all hollows have Powers(WeaponPowerId).
     /// </summary>
-    public class Hollows
+    public class Hollow
     {
         [Key]
         public int HId { get; set; }

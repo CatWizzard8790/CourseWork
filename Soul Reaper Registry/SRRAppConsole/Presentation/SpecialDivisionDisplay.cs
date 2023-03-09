@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
-    public class SpecialDivisionsDisplay : Display
+    public class SpecialDivisionDisplay : Display
     {
         SPDivBusiness sPDBusiness = new SPDivBusiness();
         public override void ShowMenu()
@@ -37,7 +37,7 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            SpecialDivisions SPdiv = new SpecialDivisions();
+            SpecialDivision SPdiv = new SpecialDivision();
 
             Console.Write("Name: ");
             SPdiv.Name = Console.ReadLine();
@@ -62,7 +62,7 @@ namespace SRRAppConsole.Presentation
             string data;
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SpecialDivisions SPDiv = sPDBusiness.Get(id);
+            SpecialDivision SPDiv = sPDBusiness.Get(id);
             if (SPDiv != null)
             {
                 Console.Write("Name: ");
@@ -92,7 +92,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SpecialDivisions SPDs = sPDBusiness.Get(id);
+            SpecialDivision SPDs = sPDBusiness.Get(id);
             if (SPDs != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -114,7 +114,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SpecialDivisions SPDS = sPDBusiness.Get(id);
+            SpecialDivision SPDS = sPDBusiness.Get(id);
             if (SPDS != null)
             {
                 sPDBusiness.Delete(id);

@@ -43,7 +43,7 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            HollowClassifications hollowClassifications = new HollowClassifications();
+            HollowClassification hollowClassifications = new HollowClassification();
 
             Console.Write("Name: ");
             hollowClassifications.Name = Console.ReadLine();            
@@ -60,7 +60,7 @@ namespace SRRAppConsole.Presentation
             string data;
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            HollowClassifications hollow = hCBusiness.Get(id);
+            HollowClassification hollow = hCBusiness.Get(id);
             if (hollow != null)
             {
                 Console.Write("Name: ");
@@ -82,7 +82,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            HollowClassifications hcs = hCBusiness.Get(id);
+            HollowClassification hcs = hCBusiness.Get(id);
             if (hcs != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -102,7 +102,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            HollowClassifications hollow = hCBusiness.Get(id);
+            HollowClassification hollow = hCBusiness.Get(id);
             if (hollow != null)
             {
                 hCBusiness.Delete(id);

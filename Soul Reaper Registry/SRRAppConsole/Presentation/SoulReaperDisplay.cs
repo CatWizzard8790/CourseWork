@@ -50,7 +50,7 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            SoulReapers sr = new SoulReapers();
+            SoulReaper sr = new SoulReaper();
 
             Console.Write("First Name: ");
             sr.FirstName = Console.ReadLine();
@@ -91,7 +91,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SoulReapers sr = sRRBusiness.Get(id);
+            SoulReaper sr = sRRBusiness.Get(id);
             if (sr != null)
             {
                 Console.WriteLine($"Id: { sr.SRId}| First Name: { sr.FirstName}| Last Name: { sr.LastName}| EnrollDate: { sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
@@ -141,7 +141,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SoulReapers sr = sRRBusiness.Get(id);
+            SoulReaper sr = sRRBusiness.Get(id);
             if (sr != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -167,7 +167,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SoulReapers product = sRRBusiness.Get(id);
+            SoulReaper product = sRRBusiness.Get(id);
             if (product != null)
             {
                 sRRBusiness.Delete(id);

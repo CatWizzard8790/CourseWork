@@ -10,7 +10,7 @@ namespace Data.Models
     /// <summary>
     /// Intermediate table for Hollows and Missions, allowing the Many to Many relation. It also has information about whether the Hollow is dead or alive
     /// </summary>
-    public class MissionsHollows
+    public class MissionHollow
     {
         [Key]
         public int MissionsId { get; set; }

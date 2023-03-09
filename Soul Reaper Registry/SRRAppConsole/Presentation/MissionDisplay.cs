@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole
 {
-    public class MissionsDisplay : Display
+    public class MissionDisplay : Display
     {
         MisBusiness misBusiness = new MisBusiness();
         public override void ShowMenu()
@@ -43,7 +43,7 @@ namespace SRRAppConsole
         public override void Add()
         {
             string data;
-            Missions missions = new Missions();
+            Mission missions = new Mission();
 
             Console.Write("Name: ");
             missions.Name = Console.ReadLine();
@@ -64,7 +64,7 @@ namespace SRRAppConsole
             string data;
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Missions missions = misBusiness.Get(id);
+            Mission missions = misBusiness.Get(id);
             if (missions != null)
             {
                 Console.Write("Name: ");
@@ -90,7 +90,7 @@ namespace SRRAppConsole
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Missions missions = misBusiness.Get(id);
+            Mission missions = misBusiness.Get(id);
             if (missions != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -111,7 +111,7 @@ namespace SRRAppConsole
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Missions missions = misBusiness.Get(id);
+            Mission missions = misBusiness.Get(id);
             if (missions != null)
             {
                 misBusiness.Delete(id);

@@ -10,7 +10,7 @@ namespace Data.Models
     /// <summary>
     /// Both Soul Reapers and Hollows could achieve different Weapon Powers. A Singular weapon could have up to two forms, a Hollow's second form is a "Resurreccion" and a Soul Reaper's is "Bankai"- everything else falls under the "Other" category.
     /// </summary>
-    public class WeaponPowers
+    public class WeaponPower
     {
         [Key]
         public int WPId { get; set; }

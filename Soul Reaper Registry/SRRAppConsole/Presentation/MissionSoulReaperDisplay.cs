@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
-    public class MissionsSoulReapersDisplay : Display
+    public class MissionSoulReaperDisplay : Display
     {
         MisSRBusiness misSRBusiness = new MisSRBusiness();
         public override void ShowMenu()
@@ -36,7 +36,7 @@ namespace SRRAppConsole.Presentation
         }
         public override void Add()
         {
-            MissionsSoulReapers missSR = new MissionsSoulReapers();
+            MissionSoulReaper missSR = new MissionSoulReaper();
 
             Console.Write("Soul Reaper Id: ");
             missSR.SRId = int.Parse(Console.ReadLine());
@@ -53,7 +53,7 @@ namespace SRRAppConsole.Presentation
             int[] ids = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int id = ids[0];
             int id2 = ids[1];
-            MissionsSoulReapers SRmiss = misSRBusiness.Get(id, id2);
+            MissionSoulReaper SRmiss = misSRBusiness.Get(id, id2);
             if (SRmiss != null)
             {
                 Console.Write("Soul Reaper Id: ");
@@ -76,7 +76,7 @@ namespace SRRAppConsole.Presentation
             int[] ids = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int id = ids[0];
             int id2 = ids[1];
-            MissionsSoulReapers SRMis = misSRBusiness.Get(id, id2);
+            MissionSoulReaper SRMis = misSRBusiness.Get(id, id2);
             if (SRMis != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -97,7 +97,7 @@ namespace SRRAppConsole.Presentation
             int[] ids = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int id = ids[0];
             int id2 = ids[1];
-            MissionsSoulReapers SRMis = misSRBusiness.Get(id, id2);
+            MissionSoulReaper SRMis = misSRBusiness.Get(id, id2);
             if (SRMis != null)
             {
                 misSRBusiness.Delete(id, id2);

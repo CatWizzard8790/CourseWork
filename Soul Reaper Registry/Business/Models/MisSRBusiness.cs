@@ -12,7 +12,7 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
-        public List<MissionsSoulReapers> GetAll()
+        public List<MissionSoulReaper> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
@@ -20,7 +20,7 @@ namespace Business.Models
             }
         }
 
-        public MissionsSoulReapers Get(int id1, int id2)
+        public MissionSoulReaper Get(int id1, int id2)
         {
             using (sRRContext = new SRRContext())
             {
@@ -28,7 +28,7 @@ namespace Business.Models
             }
         }
 
-        public void Add(MissionsSoulReapers product)
+        public void Add(MissionSoulReaper product)
         {
 
             using (sRRContext = new SRRContext())
@@ -38,7 +38,7 @@ namespace Business.Models
             }
         }
 
-        public void Update(MissionsSoulReapers product)
+        public void Update(MissionSoulReaper product)
         {
             using (sRRContext = new SRRContext())
             {

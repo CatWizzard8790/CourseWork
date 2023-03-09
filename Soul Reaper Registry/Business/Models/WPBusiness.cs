@@ -12,7 +12,7 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
-        public List<WeaponPowers> GetAll()
+        public List<WeaponPower> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
@@ -20,7 +20,7 @@ namespace Business.Models
             }
         }
 
-        public WeaponPowers Get(int id)
+        public WeaponPower Get(int id)
         {
             using (sRRContext = new SRRContext())
             {
@@ -28,7 +28,7 @@ namespace Business.Models
             }
         }
 
-        public void Add(WeaponPowers product)
+        public void Add(WeaponPower product)
         {
 
             using (sRRContext = new SRRContext())
@@ -38,7 +38,7 @@ namespace Business.Models
             }
         }
 
-        public void Update(WeaponPowers product)
+        public void Update(WeaponPower product)
         {
             using (sRRContext = new SRRContext())
             {

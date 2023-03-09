@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
-    public class WeaponPowersDisplay : Display
+    public class WeaponPowerDisplay : Display
     {
         WPBusiness wPBusiness = new WPBusiness();
         public override void ShowMenu()
@@ -37,7 +37,7 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            WeaponPowers WPs = new WeaponPowers();
+            WeaponPower WPs = new WeaponPower();
 
             Console.Write("First Form: ");
             WPs.FirstForm = Console.ReadLine();
@@ -61,7 +61,7 @@ namespace SRRAppConsole.Presentation
             string data;
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            WeaponPowers WPs = wPBusiness.Get(id);
+            WeaponPower WPs = wPBusiness.Get(id);
             if (WPs != null)
             {
                 Console.Write("First Form: ");
@@ -90,7 +90,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            WeaponPowers WPs = wPBusiness.Get(id);
+            WeaponPower WPs = wPBusiness.Get(id);
             if (WPs != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -111,7 +111,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            WeaponPowers WPs = wPBusiness.Get(id);
+            WeaponPower WPs = wPBusiness.Get(id);
             if (WPs != null)
             {
                 wPBusiness.Delete(id);

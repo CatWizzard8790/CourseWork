@@ -12,7 +12,7 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
-        public List<HollowClassifications> GetAll()
+        public List<HollowClassification> GetAll()
         {
             using (sRRContext = new SRRContext())
             {
@@ -20,7 +20,7 @@ namespace Business.Models
             }
         }
 
-        public HollowClassifications Get(int id)
+        public HollowClassification Get(int id)
         {
             using (sRRContext = new SRRContext())
             {
@@ -28,7 +28,7 @@ namespace Business.Models
             }
         }
 
-        public void Add(HollowClassifications product)
+        public void Add(HollowClassification product)
         {
 
             using (sRRContext = new SRRContext())
@@ -38,7 +38,7 @@ namespace Business.Models
             }
         }
 
-        public void Update(HollowClassifications product)
+        public void Update(HollowClassification product)
         {
             using (sRRContext = new SRRContext())
             {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
-    public class MissionsHollowsDisplay : Display
+    public class MissionHollowDisplay : Display
     {
         MisHBusiness missHBusiness = new MisHBusiness();
         public override void ShowMenu()
@@ -41,7 +41,7 @@ namespace SRRAppConsole.Presentation
         }
         public override void Add()
         {
-            MissionsHollows missH = new MissionsHollows();
+            MissionHollow missH = new MissionHollow();
 
             Console.Write("Mission Id: ");
             missH.MissionsId = int.Parse(Console.ReadLine());
@@ -61,7 +61,7 @@ namespace SRRAppConsole.Presentation
             int[] ids = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int id = ids[0];
             int id2 = ids[1];
-            MissionsHollows Hmiss = missHBusiness.Get(id, id2 );
+            MissionHollow Hmiss = missHBusiness.Get(id, id2 );
             if (Hmiss != null)
             {
                 Console.Write("Mission Id: ");
@@ -87,7 +87,7 @@ namespace SRRAppConsole.Presentation
             int[] ids = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int id = ids[0];
             int id2 = ids[1];
-            MissionsHollows Hmis = missHBusiness.Get(id, id2);
+            MissionHollow Hmis = missHBusiness.Get(id, id2);
             if (Hmis != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -109,7 +109,7 @@ namespace SRRAppConsole.Presentation
             int[] ids = Console.ReadLine().Split().Select(int.Parse).ToArray();
             int id = ids[0];
             int id2 = ids[1];
-            MissionsHollows hmis = missHBusiness.Get(id, id2);
+            MissionHollow hmis = missHBusiness.Get(id, id2);
             if (hmis != null)
             {
                 missHBusiness.Delete(id, id2);

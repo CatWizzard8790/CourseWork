@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
-    public class HollowsDisplay : Display
+    public class HollowDisplay : Display
     {
         HBusiness hBusiness = new HBusiness();
         public override void ShowMenu()
@@ -42,7 +42,7 @@ namespace SRRAppConsole.Presentation
         public override void Add()
         {
             string data;
-            Hollows hollows = new Hollows();
+            Hollow hollows = new Hollow();
 
             Console.Write("Name: ");
             hollows.Name = Console.ReadLine();
@@ -69,7 +69,7 @@ namespace SRRAppConsole.Presentation
             string data;
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Hollows hollow = hBusiness.Get(id);
+            Hollow hollow = hBusiness.Get(id);
             if (hollow != null)
             {
                 Console.Write("Name: ");
@@ -101,7 +101,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Hollows hcs = hBusiness.Get(id);
+            Hollow hcs = hBusiness.Get(id);
             if (hcs != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -124,7 +124,7 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Hollows hollow = hBusiness.Get(id);
+            Hollow hollow = hBusiness.Get(id);
             if (hollow != null)
             {
                 hBusiness.Delete(id);
