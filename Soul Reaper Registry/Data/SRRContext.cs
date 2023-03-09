@@ -26,8 +26,20 @@ namespace Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           /* modelBuilder.Entity<Division>()
-                .*/
+            modelBuilder.Entity<Division>()
+                .HasOne(d => d.Captain)
+                .WithMany()
+                .HasForeignKey(d => d.CaptainId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Division>()
+                .HasOne(d => d.Lieutenant)
+                .WithMany()
+                .HasForeignKey(d => d.LieutenantId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }
