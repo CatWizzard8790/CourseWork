@@ -20,13 +20,21 @@ namespace Data.Models
         public string LastName { get; set; }
         public DateTime? EnrollDate { get; set; }
         public bool Available { get; set; }
+
+        [ForeignKey("DivisionId")]
         public int? DivisionId { get; set; }
+        public Division Division { get; set; }
+
+        [ForeignKey("SpecialDivisionId")]
         public int? SpecialId { get; set; }
+        public SpecialDivision SpecialDivision { get; set; }
+
         public string WeaponName { get; set; }
 
         [ForeignKey("WeaponPower")]
         public int? WeaponPowerId { get; set; }
         public WeaponPower WeaponPowers { get; set; }
+
         public string? Description { get; set; }
 
     }

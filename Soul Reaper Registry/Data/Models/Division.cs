@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,15 @@ namespace Data.Models
         public int DivisionNumber { get; set; }
 
         public string Name { get; set; }
+
+        [ForeignKey("CaprainId")]
         public int? CaptainId { get; set; }
+        public SoulReaper Caprain { get; set; }
+
+        [ForeignKey("LieutenantId")]
         public int? LieutenantId { get; set; }
+        public SoulReaper Lieutenant { get; set; }
+
         public string? Description { get; set; }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,15 @@ namespace Data.Models
         public int HId { get; set; }
 
         public string Name { get; set; }
+
+        [ForeignKey("ClassificationId")]
         public int ClassId { get; set; }
-        public bool Alive { get; set; }
+        public HollowClassification HollowClassification { get; set; }
+
+        [ForeignKey("WeaponPowerId")]
         public int? WeaponPowerId { get; set; }
+        public WeaponPower WeaponPower { get; set; }
+
         public string? Description { get; set; }
     }
 }
