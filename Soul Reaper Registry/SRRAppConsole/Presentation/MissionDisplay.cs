@@ -14,13 +14,13 @@ namespace SRRAppConsole
         MisBusiness misBusiness = new MisBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 30));
+            Console.WriteLine(new string('-', 35));
             Console.WriteLine(@"  __  __ _         _             
  |  \/  (_)___ ___(_) ___  _ __  
  | |\/| | / __/ __| |/ _ \| '_ \ 
  | |  | | \__ \__ \ | (_) | | | |
  |_|  |_|_|___/___/_|\___/|_| |_|");
-            Console.WriteLine(new string('-', 30));
+            Console.WriteLine(new string('-', 35));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");

@@ -29,10 +29,10 @@ namespace SRRAppConsole.Presentation
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 25));
+            Console.WriteLine(new string('-', 20));
             Console.WriteLine(@"|_| _  |  |  _     _ 
 | |(_) |  | (_)\^/_> ");
-            Console.WriteLine(new string('-', 25));
+            Console.WriteLine(new string('-', 20));
             var hcs = hBusiness.GetAll();
             foreach (var item in hcs)
             {

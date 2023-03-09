@@ -13,7 +13,7 @@ namespace Data.Models
     /// </summary>
     public class MissionSoulReaper
     {
-        [Key]
+        
         public int SRId { get; set; }
 
         [ForeignKey("MissionId")]

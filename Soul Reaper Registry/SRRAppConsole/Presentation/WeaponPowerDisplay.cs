@@ -13,9 +13,14 @@ namespace SRRAppConsole.Presentation
         WPBusiness wPBusiness = new WPBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Weapon Powers ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 70));
+            Console.WriteLine(@" __        __                             ____                        
+ \ \      / /__  __ _ _ __   ___  _ __   |  _ \ _____      _____ _ __ 
+  \ \ /\ / / _ \/ _` | '_ \ / _ \| '_ \  | |_) / _ \ \ /\ / / _ \ '__|
+   \ V  V /  __/ (_| | |_) | (_) | | | | |  __/ (_) \ V  V /  __/ |   
+    \_/\_/ \___|\__,_| .__/ \___/|_| |_| |_|   \___/ \_/\_/ \___|_|   
+                     |_|                                              ");
+            Console.WriteLine(new string('-', 70));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
@@ -25,9 +30,12 @@ namespace SRRAppConsole.Presentation
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Special Division ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 50));
+            Console.WriteLine(@"                             _                   
+ \    / _   _. ._   _  ._   |_) _        _  ._ _ 
+  \/\/ (/_ (_| |_) (_) | |  |  (_) \/\/ (/_ | _> 
+               |                                 ");
+            Console.WriteLine(new string('-', 50));
             var WPs = wPBusiness.GetAll();
             foreach (var item in WPs)
             {
