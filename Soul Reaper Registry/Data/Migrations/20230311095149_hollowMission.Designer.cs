@@ -4,14 +4,16 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
-    partial class SRRContextModelSnapshot : ModelSnapshot
+    [Migration("20230311095149_hollowMission")]
+    partial class hollowMission
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,16 +121,18 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Models.MissionHollow", b =>
                 {
-                    b.Property<int>("HollowsId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MissionsId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int?>("HollowHId")
                         .HasColumnType("int");
 
-                    b.HasKey("HollowsId", "MissionsId");
+                    b.Property<int>("HollowsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MissionsId");
 
                     b.HasIndex("HollowHId");
 
@@ -137,13 +141,17 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Models.MissionSoulReaper", b =>
                 {
+                    b.Property<int>("SRId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("MissionId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SRId")
-                        .HasColumnType("int");
+                    b.HasKey("SRId");
 
-                    b.HasKey("MissionId", "SRId");
+                    b.HasIndex("MissionId");
 
                     b.ToTable("MissionsSoulReaper");
                 });
