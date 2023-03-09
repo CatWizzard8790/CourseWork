@@ -2,6 +2,8 @@
 using Business.Models;
 using Data.Models;
 
+
+
 namespace SRRAppConsole.Presentation
 {
     public class SoulReaperDisplay : Display
@@ -32,6 +34,7 @@ namespace SRRAppConsole.Presentation
             Console.WriteLine("6. Go back to main menu");
 
         }
+
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 40));
@@ -43,10 +46,12 @@ namespace SRRAppConsole.Presentation
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
-                Console.WriteLine($"Id: { item.SRId}| First Name: { item.FirstName}| Last Name: { item.LastName}| EnrollDate: { item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|");
+                Console.WriteLine(
+                    $"Id: {item.SRId}| First Name: {item.FirstName}| Last Name: {item.LastName}| EnrollDate: {item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|");
             }
 
         }
+
         public override void Add()
         {
             string data;
@@ -83,10 +88,18 @@ namespace SRRAppConsole.Presentation
             Console.Write("Description: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.Description = data;
+            try
+            {
+                sRRBusiness.Add(sr);
+                Console.WriteLine("The Soul Reaper has been added!");
 
-            sRRBusiness.Add(sr);
-            Console.WriteLine("The Soul Reaper has been added!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error!");
+            }
         }
+
         public override void Update()
         {
             Console.Write("Id: ");
@@ -94,7 +107,8 @@ namespace SRRAppConsole.Presentation
             SoulReaper sr = sRRBusiness.Get(id);
             if (sr != null)
             {
-                Console.WriteLine($"Id: { sr.SRId}| First Name: { sr.FirstName}| Last Name: { sr.LastName}| EnrollDate: { sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
+                Console.WriteLine(
+                    $"Id: {sr.SRId}| First Name: {sr.FirstName}| Last Name: {sr.LastName}| EnrollDate: {sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
                 string data;
 
                 Console.Write("First Name: ");
@@ -137,6 +151,7 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("Soul Reaper not found!");
             }
         }
+
         public override void Fetch()
         {
             Console.Write("Id: ");
@@ -163,6 +178,7 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("Soul Reaper not found!");
             }
         }
+
         public override void Delete()
         {
             Console.Write("Id: ");
@@ -179,4 +195,6 @@ namespace SRRAppConsole.Presentation
             }
         }
     }
-}
+
+
+
