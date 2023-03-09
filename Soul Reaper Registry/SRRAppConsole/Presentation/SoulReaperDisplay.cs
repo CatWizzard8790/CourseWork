@@ -43,7 +43,7 @@ namespace SRRAppConsole.Presentation
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
-                Console.WriteLine($"Id: { item.SRId}| First Name: { item.FirstName}| Last Name: { item.LastName}| EnrollDate: { item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|\n" +
+                Console.WriteLine($"Id: {item.SRId}| First Name: {item.FirstName}| Last Name: {item.LastName}| EnrollDate: {item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|\n" +
                     $" ");
             }
 
@@ -85,8 +85,17 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.Description = data;
 
-            sRRBusiness.Add(sr);
-            Console.WriteLine("The Soul Reaper has been added!");
+            try
+            {
+                sRRBusiness.Add(sr);
+                Console.WriteLine("The Soul Reaper has been added!");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error! Incorrect data!");
+                throw;
+            }
         }
         public override void Update()
         {
@@ -95,7 +104,7 @@ namespace SRRAppConsole.Presentation
             SoulReaper sr = sRRBusiness.Get(id);
             if (sr != null)
             {
-                Console.WriteLine($"Id: { sr.SRId}| First Name: { sr.FirstName}| Last Name: { sr.LastName}| EnrollDate: { sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
+                Console.WriteLine($"Id: {sr.SRId}| First Name: {sr.FirstName}| Last Name: {sr.LastName}| EnrollDate: {sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
                 string data;
 
                 Console.Write("First Name: ");
