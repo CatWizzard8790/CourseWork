@@ -13,13 +13,13 @@ namespace SRRAppConsole.Presentation
         DivBusiness divBusiness = new DivBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@"  ____  _       _     _                 
- |  _ \(_)_   _(_)___(_) ___  _ __  ___ 
- | | | | \ \ / / / __| |/ _ \| '_ \/ __|
- | |_| | |\ V /| \__ \ | (_) | | | \__ \
- |____/|_| \_/ |_|___/_|\___/|_| |_|___/");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 35));
+            Console.WriteLine(@"  ____  _       _     _             
+ |  _ \(_)_   _(_)___(_) ___  _ __  
+ | | | | \ \ / / / __| |/ _ \| '_ \ 
+ | |_| | |\ V /| \__ \ | (_) | | | |
+ |____/|_| \_/ |_|___/_|\___/|_| |_|");
+            Console.WriteLine(new string('-', 35));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");

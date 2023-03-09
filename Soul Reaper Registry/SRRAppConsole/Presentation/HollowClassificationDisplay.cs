@@ -30,9 +30,9 @@ namespace SRRAppConsole.Presentation
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 70));
-            Console.WriteLine(@"                         _                 _                        
- |_|  _  | |  _         /  |  _.  _  _ o _|_ o  _  _. _|_ o  _  ._  
- | | (_) | | (_) \/\/   \_ | (_| _> _> |  |  | (_ (_|  |_ | (_) | | ");
+            Console.WriteLine(@"                      __                 _                        
+|_| _  |  |  _       /   |  _  _  _  o _|_ o  _  _ _|_ o  _ __  _ 
+| |(_) |  | (_)\^/   \__ | (_|_> _>  |  |  | (_ (_| |_ | (_)| |_> ");
             Console.WriteLine(new string('-', 70));
             var hcs = hCBusiness.GetAll();
             foreach (var item in hcs)
