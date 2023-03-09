@@ -36,7 +36,7 @@ namespace SRRAppConsole.Presentation
             var hcs = hBusiness.GetAll();
             foreach (var item in hcs)
             {
-                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class Id: {item.ClassId}| Alive: {item.Alive}| Weapon Power Id: {item.WeaponPowerId} Description: {item.Description}|");
+                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class Id: {item.ClassId}| Weapon Power Id: {item.WeaponPowerId} Description: {item.Description}|");
             }
         }
         public override void Add()
@@ -49,9 +49,6 @@ namespace SRRAppConsole.Presentation
 
             Console.Write("Class Id");
             hollows.ClassId = int.Parse(Console.ReadLine());
-
-            Console.Write("Alive: ");
-            hollows.Alive = bool.Parse(Console.ReadLine());
 
             Console.Write("Weapon Power Id: ");
             data = Console.ReadLine();
@@ -77,9 +74,6 @@ namespace SRRAppConsole.Presentation
 
                 Console.Write("Class Id");
                 hollow.ClassId = int.Parse(Console.ReadLine());
-
-                Console.Write("Alive: ");
-                hollow.Alive = bool.Parse(Console.ReadLine());
 
                 Console.Write("Weapon Power Id: ");
                 data = Console.ReadLine();
@@ -109,7 +103,6 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("ID: " + hcs.HId);
                 Console.WriteLine("Name: " + hcs.Name);
                 Console.WriteLine("Class Id: " + hcs.ClassId);
-                Console.WriteLine("Alive: " + hcs.Alive);
                 Console.WriteLine("WeaPon Power Id: " + hcs.WeaponPowerId);
                 Console.WriteLine("Description: " + hcs.Description);
 

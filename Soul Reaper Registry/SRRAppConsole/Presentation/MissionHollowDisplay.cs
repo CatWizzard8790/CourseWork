@@ -36,7 +36,7 @@ namespace SRRAppConsole.Presentation
             var misH = missHBusiness.GetAll();
             foreach (var item in misH)
             {
-                Console.WriteLine($"Mission Id: {item.MissionsId}| Hollow Id: {item.HollowsId}| Hollow Status: {item.HollowStatus}|");
+                Console.WriteLine($"Mission Id: {item.MissionsId}| Hollow Id: {item.HollowsId}");
             }
         }
         public override void Add()
@@ -48,9 +48,6 @@ namespace SRRAppConsole.Presentation
 
             Console.Write("Hollow Id: ");
             missH.HollowsId = int.Parse(Console.ReadLine());
-
-            Console.Write("Hollow Status: ");
-            missH.HollowStatus = bool.Parse(Console.ReadLine());
 
             missHBusiness.Add(missH);
             Console.WriteLine("The Hollow Mission has been added!");
@@ -69,9 +66,6 @@ namespace SRRAppConsole.Presentation
 
                 Console.Write("Hollow Id: ");
                 Hmiss.HollowsId = int.Parse(Console.ReadLine());
-
-                Console.Write("Hollow Status: ");
-                Hmiss.HollowStatus = bool.Parse(Console.ReadLine());
 
                 missHBusiness.Update(Hmiss);
                 Console.WriteLine("The Mission has been updated!");
@@ -94,7 +88,6 @@ namespace SRRAppConsole.Presentation
 
                 Console.WriteLine("Mission Id: " + Hmis.MissionsId);
                 Console.WriteLine("Hollow Id: " + Hmis.HollowsId);
-                Console.WriteLine("Hollow Status: " + Hmis.HollowStatus);
 
                 Console.WriteLine(new string('-', 40));
             }

@@ -19,11 +19,11 @@ namespace Data.Models
 
         public string Name { get; set; }
 
-        [ForeignKey("CaprainId")]
+        [ForeignKey("Captain")]
         public int? CaptainId { get; set; }
-        public SoulReaper Caprain { get; set; }
+        public SoulReaper Captain { get; set; }
 
-        [ForeignKey("LieutenantId")]
+        [ForeignKey("Lieutenant")]
         public int? LieutenantId { get; set; }
         public SoulReaper Lieutenant { get; set; }
 

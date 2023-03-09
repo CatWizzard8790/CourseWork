@@ -23,5 +23,11 @@ namespace Data
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\Jimmy; DataBase = SoulReaperRegistry; Integrated security = true");
             }
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+           /* modelBuilder.Entity<Division>()
+                .*/
+        }
     }
 }

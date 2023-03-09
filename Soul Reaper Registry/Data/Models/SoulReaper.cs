@@ -36,6 +36,7 @@ namespace Data.Models
         public WeaponPower WeaponPowers { get; set; }
 
         public string? Description { get; set; }
+        
 
     }
 }

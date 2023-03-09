@@ -18,11 +18,11 @@ namespace Data.Models
 
         public string Name { get; set; }
 
-        [ForeignKey("LeaderId")]
+        [ForeignKey("Leader")]
         public int? LeaderId { get; set; }
-        public SoulReaper SoulReaper { get; set; }
+        public SoulReaper Leader{ get; set; }
 
-        [ForeignKey("DivisionId")]
+        [ForeignKey("Division")]
         public int? DivisionId { get; set; }
         public Division Division { get; set; }
 
