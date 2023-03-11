@@ -4,14 +4,16 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
-    partial class SRRContextModelSnapshot : ModelSnapshot
+    [Migration("20230309110357_keys")]
+    partial class keys
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -245,36 +247,6 @@ namespace Data.Migrations
                     b.ToTable("WeaponPower");
                 });
 
-            modelBuilder.Entity("HollowMission", b =>
-                {
-                    b.Property<int>("HollowIdHId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MissionIdMId")
-                        .HasColumnType("int");
-
-                    b.HasKey("HollowIdHId", "MissionIdMId");
-
-                    b.HasIndex("MissionIdMId");
-
-                    b.ToTable("HollowMission");
-                });
-
-            modelBuilder.Entity("MissionSoulReaper", b =>
-                {
-                    b.Property<int>("MissionsIdMId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SoulReaperIdSRId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MissionsIdMId", "SoulReaperIdSRId");
-
-                    b.HasIndex("SoulReaperIdSRId");
-
-                    b.ToTable("MissionSoulReaper");
-                });
-
             modelBuilder.Entity("Data.Models.Division", b =>
                 {
                     b.HasOne("Data.Models.SoulReaper", "Captain")
@@ -355,36 +327,6 @@ namespace Data.Migrations
                     b.Navigation("Division");
 
                     b.Navigation("Leader");
-                });
-
-            modelBuilder.Entity("HollowMission", b =>
-                {
-                    b.HasOne("Data.Models.Hollow", null)
-                        .WithMany()
-                        .HasForeignKey("HollowIdHId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.Models.Mission", null)
-                        .WithMany()
-                        .HasForeignKey("MissionIdMId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MissionSoulReaper", b =>
-                {
-                    b.HasOne("Data.Models.Mission", null)
-                        .WithMany()
-                        .HasForeignKey("MissionsIdMId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Data.Models.SoulReaper", null)
-                        .WithMany()
-                        .HasForeignKey("SoulReaperIdSRId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Data.Models.SoulReaper", b =>

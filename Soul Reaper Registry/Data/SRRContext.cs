@@ -42,6 +42,11 @@ namespace Data
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
 
+
+            modelBuilder.Entity<MissionHollow>()
+                .HasKey(mh => new { mh.HollowsId, mh.MissionsId });
+            modelBuilder.Entity<MissionSoulReaper>()
+                .HasKey(msr => new { msr.MissionId, msr.SRId });
         }
     }
 }

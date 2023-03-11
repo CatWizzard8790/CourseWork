@@ -13,7 +13,7 @@ namespace Data.Models
     /// </summary>
     public class MissionHollow
     {
-        [Key]
+        
         public int MissionsId { get; set; }
 
         [ForeignKey("HollowId")]

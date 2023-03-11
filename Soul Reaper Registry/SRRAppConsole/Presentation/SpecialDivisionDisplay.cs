@@ -13,9 +13,14 @@ namespace SRRAppConsole.Presentation
         SPDivBusiness sPDBusiness = new SPDivBusiness();
         public override void ShowMenu()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Special Division ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 70));
+            Console.WriteLine(@"  ____                  _       _   ____  _       _     _             
+ / ___| _ __   ___  ___(_) __ _| | |  _ \(_)_   _(_)___(_) ___  _ __  
+ \___ \| '_ \ / _ \/ __| |/ _` | | | | | | \ \ / / / __| |/ _ \| '_ \ 
+  ___) | |_) |  __/ (__| | (_| | | | |_| | |\ V /| \__ \ | (_) | | | |
+ |____/| .__/ \___|\___|_|\__,_|_| |____/|_| \_/ |_|___/_|\___/|_| |_|
+       |_|                                                            ");
+            Console.WriteLine(new string('-', 70));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
             Console.WriteLine("3. Update entry");
@@ -25,9 +30,12 @@ namespace SRRAppConsole.Presentation
         }
         public override void ListAll()
         {
-            Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Special Division ");
-            Console.WriteLine(new string('-', 40));
+            Console.WriteLine(new string('-', 50));
+            Console.WriteLine(@"  __                      _                         
+ (_  ._   _   _ o  _. |  | \ o    o  _ o  _  ._   _ 
+ __) |_) (/_ (_ | (_| |  |_/ | \/ | _> | (_) | | _> 
+     |                                              ");
+            Console.WriteLine(new string('-', 50));
             var SDiv = sPDBusiness.GetAll();
             foreach (var item in SDiv)
             {
