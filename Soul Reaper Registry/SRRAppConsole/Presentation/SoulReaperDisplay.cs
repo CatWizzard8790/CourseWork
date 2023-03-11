@@ -43,7 +43,8 @@ namespace SRRAppConsole.Presentation
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
-                Console.WriteLine($"Id: { item.SRId}| First Name: { item.FirstName}| Last Name: { item.LastName}| EnrollDate: { item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|");
+                Console.WriteLine($"Id: { item.SRId}| First Name: { item.FirstName}| Last Name: { item.LastName}| EnrollDate: { item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|\n" +
+                    $" ");
             }
 
         }
