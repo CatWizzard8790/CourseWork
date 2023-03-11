@@ -21,6 +21,8 @@ namespace Data
         {
             {
                 optionsBuilder.UseSqlServer(@"Server=(localdb)\Jimmy; DataBase = SoulReaperRegistry; Integrated security = true");
+                //DESKTOP-V015LRG\SQLEXPRESS
+                //(localdb)\Jimmy
             }
         }
 
