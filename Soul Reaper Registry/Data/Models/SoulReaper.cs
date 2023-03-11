@@ -37,6 +37,11 @@ namespace Data.Models
 
         public string? Description { get; set; }
         
+        public SoulReaper()
+        {
+            this.MissionsId = new List<Mission>();
+        }
+        public virtual ICollection<Mission> MissionsId { get; set; }
 
     }
 }

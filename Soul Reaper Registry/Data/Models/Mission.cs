@@ -18,5 +18,13 @@ namespace Data.Models
         public string Name { get; set; }
         public DateTime? DateCompleted { get; set; }
         public string? Description { get; set; }
+
+        public Mission()
+        {
+            this.SoulReaperId = new List<SoulReaper>();
+            this.HollowId = new List<Hollow>();
+        }
+        public ICollection<SoulReaper> SoulReaperId { get; set; }
+        public ICollection<Hollow> HollowId { get; set; }
     }
 }
