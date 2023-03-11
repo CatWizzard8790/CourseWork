@@ -6,15 +6,15 @@ namespace Data
 {
     public class SRRContext : DbContext
     {
-        public DbSet<SoulReaper> SoulReapers { get; set; }
-        public DbSet<MissionSoulReaper> MissionsSoulReapers { get; set; }
-        public DbSet<SpecialDivision> SpecialDivisions { get; set; }
-        public DbSet<WeaponPower> WeaponPowers { get; set; }
-        public DbSet<Division> Divisions { get; set; }
-        public DbSet<HollowClassification> HollowClassifications { get; set; }
-        public DbSet<Hollow> Hollows { get; set; }
-        public DbSet<Mission> Missions { get; set; }
-        public DbSet<MissionHollow> MissionsHollows { get; set; }
+        public DbSet<SoulReaper> SoulReaper { get; set; }
+        public DbSet<MissionSoulReaper> MissionsSoulReaper { get; set; }
+        public DbSet<SpecialDivision> SpecialDivision { get; set; }
+        public DbSet<WeaponPower> WeaponPower { get; set; }
+        public DbSet<Division> Division { get; set; }
+        public DbSet<HollowClassification> HollowClassification { get; set; }
+        public DbSet<Hollow> Hollow { get; set; }
+        public DbSet<Mission> Mission { get; set; }
+        public DbSet<MissionHollow> MissionsHollow { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

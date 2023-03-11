@@ -8,7 +8,7 @@ namespace Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Divisions",
+                name: "Division",
                 columns: table => new
                 {
                     DivisionNumber = table.Column<int>(type: "int", nullable: false)
@@ -24,7 +24,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "HollowClassifications",
+                name: "HollowClassification",
                 columns: table => new
                 {
                     HCId = table.Column<int>(type: "int", nullable: false)
@@ -38,7 +38,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Hollows",
+                name: "Hollow",
                 columns: table => new
                 {
                     HId = table.Column<int>(type: "int", nullable: false)
@@ -55,7 +55,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Missions",
+                name: "Mission",
                 columns: table => new
                 {
                     MId = table.Column<int>(type: "int", nullable: false)
@@ -70,7 +70,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MissionsHollows",
+                name: "MissionsHollow",
                 columns: table => new
                 {
                     MissionsId = table.Column<int>(type: "int", nullable: false)
@@ -84,7 +84,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SoulReapers",
+                name: "SoulReaper",
                 columns: table => new
                 {
                     SRId = table.Column<int>(type: "int", nullable: false)
@@ -105,7 +105,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "MissionsSoulReapers",
+                name: "MissionsSoulReaper",
                 columns: table => new
                 {
                     SRId = table.Column<int>(type: "int", nullable: false)
@@ -118,7 +118,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SpecialDivisions",
+                name: "SpecialDivision",
                 columns: table => new
                 {
                     SDId = table.Column<int>(type: "int", nullable: false)
@@ -134,7 +134,7 @@ namespace Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WeaponPowers",
+                name: "WeaponPower",
                 columns: table => new
                 {
                     WPId = table.Column<int>(type: "int", nullable: false)
@@ -152,31 +152,31 @@ namespace Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Divisions");
+                name: "Division");
 
             migrationBuilder.DropTable(
-                name: "HollowClassifications");
+                name: "HollowClassification");
 
             migrationBuilder.DropTable(
-                name: "Hollows");
+                name: "Hollow");
 
             migrationBuilder.DropTable(
-                name: "Missions");
+                name: "Mission");
 
             migrationBuilder.DropTable(
-                name: "MissionsHollows");
+                name: "MissionsHollow");
 
             migrationBuilder.DropTable(
-                name: "SoulReapers");
+                name: "SoulReaper");
 
             migrationBuilder.DropTable(
-                name: "MissionsSoulReapers");
+                name: "MissionsSoulReaper");
 
             migrationBuilder.DropTable(
-                name: "SpecialDivisions");
+                name: "SpecialDivision");
 
             migrationBuilder.DropTable(
-                name: "WeaponPowers");
+                name: "WeaponPower");
         }
     }
 }

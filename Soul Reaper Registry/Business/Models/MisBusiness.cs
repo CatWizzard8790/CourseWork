@@ -18,7 +18,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.Missions.ToList();
+                return sRRContext.Mission.ToList();
             }
         }
 
@@ -26,7 +26,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.Missions.Find(id);
+                return sRRContext.Mission.Find(id);
             }
         }
 
@@ -35,7 +35,7 @@ namespace Business.Models
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.Missions.Add(product);
+                sRRContext.Mission.Add(product);
                 sRRContext.SaveChanges();
             }
         }
@@ -44,7 +44,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.Missions.Find(product.MId);
+                var item = sRRContext.Mission.Find(product.MId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -57,10 +57,10 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.Missions.Find(id);
+                var item = sRRContext.Mission.Find(id);
                 if (item != null)
                 {
-                    sRRContext.Missions.Remove(item);
+                    sRRContext.Mission.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

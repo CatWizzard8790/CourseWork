@@ -36,7 +36,7 @@ namespace SRRAppConsole.Presentation
             var misH = missHBusiness.GetAll();
             foreach (var item in misH)
             {
-                Console.WriteLine($"Mission Id: {item.MissionsId}| Hollows Id: {item.HollowsId}| Hollow Status: {item.HollowStatus}|");
+                Console.WriteLine($"Mission Id: {item.MissionsId}| Hollow Id: {item.HollowsId}| Hollow Status: {item.HollowStatus}|");
             }
         }
         public override void Add()

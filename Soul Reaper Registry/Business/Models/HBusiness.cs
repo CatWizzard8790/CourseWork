@@ -16,7 +16,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.Hollows.ToList();
+                return sRRContext.Hollow.ToList();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.Hollows.Find(id);
+                return sRRContext.Hollow.Find(id);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Business.Models
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.Hollows.Add(product);
+                sRRContext.Hollow.Add(product);
                 sRRContext.SaveChanges();
             }
         }
@@ -42,7 +42,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.Hollows.Find(product.HId);
+                var item = sRRContext.Hollow.Find(product.HId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -55,10 +55,10 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.Hollows.Find(id);
+                var item = sRRContext.Hollow.Find(id);
                 if (item != null)
                 {
-                    sRRContext.Hollows.Remove(item);
+                    sRRContext.Hollow.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

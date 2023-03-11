@@ -16,7 +16,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.WeaponPowers.ToList();
+                return sRRContext.WeaponPower.ToList();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.WeaponPowers.Find(id);
+                return sRRContext.WeaponPower.Find(id);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Business.Models
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.WeaponPowers.Add(product);
+                sRRContext.WeaponPower.Add(product);
                 sRRContext.SaveChanges();
             }
         }
@@ -42,7 +42,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.WeaponPowers.Find(product.WPId);
+                var item = sRRContext.WeaponPower.Find(product.WPId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -55,10 +55,10 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.WeaponPowers.Find(id);
+                var item = sRRContext.WeaponPower.Find(id);
                 if (item != null)
                 {
-                    sRRContext.WeaponPowers.Remove(item);
+                    sRRContext.WeaponPower.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

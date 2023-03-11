@@ -14,7 +14,7 @@ namespace SRRAppConsole.Presentation
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Missions Soul Reapers ");
+            Console.WriteLine(@" Mission Soul Reapers ");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
@@ -26,7 +26,7 @@ namespace SRRAppConsole.Presentation
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Missions Soul Reapers ");
+            Console.WriteLine(@" Mission Soul Reapers ");
             Console.WriteLine(new string('-', 40));
             var misSR = misSRBusiness.GetAll();
             foreach (var item in misSR)

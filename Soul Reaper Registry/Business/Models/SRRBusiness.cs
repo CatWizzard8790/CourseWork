@@ -16,7 +16,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SoulReapers.ToList();
+                return sRRContext.SoulReaper.ToList();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SoulReapers.Find(id);
+                return sRRContext.SoulReaper.Find(id);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Business.Models
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.SoulReapers.Add(product);
+                sRRContext.SoulReaper.Add(product);
                 sRRContext.SaveChanges();
             }
         }
@@ -42,7 +42,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.SoulReapers.Find(product.SRId);
+                var item = sRRContext.SoulReaper.Find(product.SRId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -55,10 +55,10 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.SoulReapers.Find(id);
+                var item = sRRContext.SoulReaper.Find(id);
                 if (item != null)
                 {
-                    sRRContext.SoulReapers.Remove(item);
+                    sRRContext.SoulReaper.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

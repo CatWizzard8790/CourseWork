@@ -19,7 +19,7 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Data.Models.Divisions", b =>
+            modelBuilder.Entity("Data.Models.Division", b =>
                 {
                     b.Property<int>("DivisionNumber")
                         .ValueGeneratedOnAdd()
@@ -40,10 +40,10 @@ namespace Data.Migrations
 
                     b.HasKey("DivisionNumber");
 
-                    b.ToTable("Divisions");
+                    b.ToTable("Division");
                 });
 
-            modelBuilder.Entity("Data.Models.HollowClassifications", b =>
+            modelBuilder.Entity("Data.Models.HollowClassification", b =>
                 {
                     b.Property<int>("HCId")
                         .ValueGeneratedOnAdd()
@@ -58,10 +58,10 @@ namespace Data.Migrations
 
                     b.HasKey("HCId");
 
-                    b.ToTable("HollowClassifications");
+                    b.ToTable("HollowClassification");
                 });
 
-            modelBuilder.Entity("Data.Models.Hollows", b =>
+            modelBuilder.Entity("Data.Models.Hollow", b =>
                 {
                     b.Property<int>("HId")
                         .ValueGeneratedOnAdd()
@@ -85,10 +85,10 @@ namespace Data.Migrations
 
                     b.HasKey("HId");
 
-                    b.ToTable("Hollows");
+                    b.ToTable("Hollow");
                 });
 
-            modelBuilder.Entity("Data.Models.Missions", b =>
+            modelBuilder.Entity("Data.Models.Mission", b =>
                 {
                     b.Property<int>("MId")
                         .ValueGeneratedOnAdd()
@@ -106,10 +106,10 @@ namespace Data.Migrations
 
                     b.HasKey("MId");
 
-                    b.ToTable("Missions");
+                    b.ToTable("Mission");
                 });
 
-            modelBuilder.Entity("Data.Models.MissionsHollows", b =>
+            modelBuilder.Entity("Data.Models.MissionsHollow", b =>
                 {
                     b.Property<int>("MissionsId")
                         .ValueGeneratedOnAdd()
@@ -124,10 +124,10 @@ namespace Data.Migrations
 
                     b.HasKey("MissionsId");
 
-                    b.ToTable("MissionsHollows");
+                    b.ToTable("MissionsHollow");
                 });
 
-            modelBuilder.Entity("Data.Models.MissionsSoulReapers", b =>
+            modelBuilder.Entity("Data.Models.MissionsSoulReaper", b =>
                 {
                     b.Property<int>("SRId")
                         .ValueGeneratedOnAdd()
@@ -139,10 +139,10 @@ namespace Data.Migrations
 
                     b.HasKey("SRId");
 
-                    b.ToTable("MissionsSoulReapers");
+                    b.ToTable("MissionsSoulReaper");
                 });
 
-            modelBuilder.Entity("Data.Models.SoulReapers", b =>
+            modelBuilder.Entity("Data.Models.SoulReaper", b =>
                 {
                     b.Property<int>("SRId")
                         .ValueGeneratedOnAdd()
@@ -178,10 +178,10 @@ namespace Data.Migrations
 
                     b.HasKey("SRId");
 
-                    b.ToTable("SoulReapers");
+                    b.ToTable("SoulReaper");
                 });
 
-            modelBuilder.Entity("Data.Models.SpecialDivisions", b =>
+            modelBuilder.Entity("Data.Models.SpecialDivision", b =>
                 {
                     b.Property<int>("SDId")
                         .ValueGeneratedOnAdd()
@@ -202,10 +202,10 @@ namespace Data.Migrations
 
                     b.HasKey("SDId");
 
-                    b.ToTable("SpecialDivisions");
+                    b.ToTable("SpecialDivision");
                 });
 
-            modelBuilder.Entity("Data.Models.WeaponPowers", b =>
+            modelBuilder.Entity("Data.Models.WeaponPower", b =>
                 {
                     b.Property<int>("WPId")
                         .ValueGeneratedOnAdd()
@@ -226,7 +226,7 @@ namespace Data.Migrations
 
                     b.HasKey("WPId");
 
-                    b.ToTable("WeaponPowers");
+                    b.ToTable("WeaponPower");
                 });
 #pragma warning restore 612, 618
         }

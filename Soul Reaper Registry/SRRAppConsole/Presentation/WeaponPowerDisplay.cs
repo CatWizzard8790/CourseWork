@@ -26,7 +26,7 @@ namespace SRRAppConsole.Presentation
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Special Divisions ");
+            Console.WriteLine(@" Special Division ");
             Console.WriteLine(new string('-', 40));
             var WPs = wPBusiness.GetAll();
             foreach (var item in WPs)

@@ -16,7 +16,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.MissionsHollows.ToList();
+                return sRRContext.MissionsHollow.ToList();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.MissionsHollows.FirstOrDefault(x => x.HollowsId == id1 && x.MissionsId == id2); ;
+                return sRRContext.MissionsHollow.FirstOrDefault(x => x.HollowsId == id1 && x.MissionsId == id2); ;
             }
         }
 
@@ -33,7 +33,7 @@ namespace Business.Models
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.MissionsHollows.Add(product);
+                sRRContext.MissionsHollow.Add(product);
                 sRRContext.SaveChanges();
             }
         }
@@ -42,7 +42,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.MissionsHollows.FirstOrDefault(x => x.HollowsId == product.HollowsId && x.MissionsId == product.MissionsId);
+                var item = sRRContext.MissionsHollow.FirstOrDefault(x => x.HollowsId == product.HollowsId && x.MissionsId == product.MissionsId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -68,10 +68,10 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.MissionsHollows.FirstOrDefault(x => x.HollowsId == id1 && x.MissionsId == id2);
+                var item = sRRContext.MissionsHollow.FirstOrDefault(x => x.HollowsId == id1 && x.MissionsId == id2);
                 if (item != null)
                 {
-                    sRRContext.MissionsHollows.Remove(item);
+                    sRRContext.MissionsHollow.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

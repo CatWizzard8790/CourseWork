@@ -14,7 +14,7 @@ namespace SRRAppConsole.Presentation
         public override void ShowMenu()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Special Divisions ");
+            Console.WriteLine(@" Special Division ");
             Console.WriteLine(new string('-', 40));
             Console.WriteLine("1. List all entries");
             Console.WriteLine("2. Add new entry");
@@ -26,7 +26,7 @@ namespace SRRAppConsole.Presentation
         public override void ListAll()
         {
             Console.WriteLine(new string('-', 40));
-            Console.WriteLine(@" Special Divisions ");
+            Console.WriteLine(@" Special Division ");
             Console.WriteLine(new string('-', 40));
             var SDiv = sPDBusiness.GetAll();
             foreach (var item in SDiv)

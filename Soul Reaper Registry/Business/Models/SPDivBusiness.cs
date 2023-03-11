@@ -16,7 +16,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SpecialDivisions.ToList();
+                return sRRContext.SpecialDivision.ToList();
             }
         }
 
@@ -24,7 +24,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SpecialDivisions.Find(id);
+                return sRRContext.SpecialDivision.Find(id);
             }
         }
 
@@ -33,7 +33,7 @@ namespace Business.Models
 
             using (sRRContext = new SRRContext())
             {
-                sRRContext.SpecialDivisions.Add(product);
+                sRRContext.SpecialDivision.Add(product);
                 sRRContext.SaveChanges();
             }
         }
@@ -42,7 +42,7 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.SpecialDivisions.Find(product.SDId);
+                var item = sRRContext.SpecialDivision.Find(product.SDId);
                 if (item != null)
                 {
                     sRRContext.Entry(item).CurrentValues.SetValues(product);
@@ -55,10 +55,10 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                var item = sRRContext.SpecialDivisions.Find(id);
+                var item = sRRContext.SpecialDivision.Find(id);
                 if (item != null)
                 {
-                    sRRContext.SpecialDivisions.Remove(item);
+                    sRRContext.SpecialDivision.Remove(item);
                     sRRContext.SaveChanges();
                 }
             }

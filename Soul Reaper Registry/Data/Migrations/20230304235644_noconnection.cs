@@ -9,13 +9,13 @@ namespace Data.Migrations
         {
             migrationBuilder.AddColumn<string>(
                 name: "Description",
-                table: "WeaponPowers",
+                table: "WeaponPower",
                 type: "nvarchar(max)",
                 nullable: true);
 
             migrationBuilder.AlterColumn<int>(
                 name: "LeaderId",
-                table: "SpecialDivisions",
+                table: "SpecialDivision",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -23,7 +23,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "DivisionId",
-                table: "SpecialDivisions",
+                table: "SpecialDivision",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -31,7 +31,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<DateTime>(
                 name: "DateCompleted",
-                table: "Missions",
+                table: "Mission",
                 type: "datetime2",
                 nullable: true,
                 oldClrType: typeof(DateTime),
@@ -39,7 +39,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "WeaponPowerId",
-                table: "Hollows",
+                table: "Hollow",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -47,7 +47,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "LieutenantId",
-                table: "Divisions",
+                table: "Division",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -55,7 +55,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "CaptainId",
-                table: "Divisions",
+                table: "Division",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
@@ -66,11 +66,11 @@ namespace Data.Migrations
         {
             migrationBuilder.DropColumn(
                 name: "Description",
-                table: "WeaponPowers");
+                table: "WeaponPower");
 
             migrationBuilder.AlterColumn<int>(
                 name: "LeaderId",
-                table: "SpecialDivisions",
+                table: "SpecialDivision",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,
@@ -80,7 +80,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "DivisionId",
-                table: "SpecialDivisions",
+                table: "SpecialDivision",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,
@@ -90,7 +90,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<DateTime>(
                 name: "DateCompleted",
-                table: "Missions",
+                table: "Mission",
                 type: "datetime2",
                 nullable: false,
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -100,7 +100,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "WeaponPowerId",
-                table: "Hollows",
+                table: "Hollow",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,
@@ -110,7 +110,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "LieutenantId",
-                table: "Divisions",
+                table: "Division",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,
@@ -120,7 +120,7 @@ namespace Data.Migrations
 
             migrationBuilder.AlterColumn<int>(
                 name: "CaptainId",
-                table: "Divisions",
+                table: "Division",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,

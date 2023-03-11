@@ -87,14 +87,14 @@ namespace SRRAppConsole
                                          |_|                           |___/                |___/ ");
             Console.WriteLine(new string('=', 100));
             Console.WriteLine("1. Soul Reapers");
-            Console.WriteLine("2. Divisions");
-            Console.WriteLine("3. Special Divisions");
+            Console.WriteLine("2. Division");
+            Console.WriteLine("3. Special Division");
             Console.WriteLine("4. Weapon Powers");
-            Console.WriteLine("5. Hollows");
+            Console.WriteLine("5. Hollow");
             Console.WriteLine("6. Hollow Classifications");
-            Console.WriteLine("7. Soul Reapers Missions");
-            Console.WriteLine("8. Hollows Missions");
-            Console.WriteLine("9. Missions");
+            Console.WriteLine("7. Soul Reapers Mission");
+            Console.WriteLine("8. Hollow Mission");
+            Console.WriteLine("9. Mission");
             Console.WriteLine("10. Close Application");
         }
     }
