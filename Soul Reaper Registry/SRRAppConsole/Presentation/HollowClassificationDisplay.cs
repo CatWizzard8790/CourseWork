@@ -70,6 +70,7 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) hollow.Description = data;
 
+                
                 hCBusiness.Update(hollow);
                 Console.WriteLine("The Hollow Classification has been updated!");
             }

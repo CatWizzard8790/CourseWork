@@ -58,8 +58,16 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) hollows.Description = data;
 
-            hBusiness.Add(hollows);
-            Console.WriteLine("The Hollow has been added!");
+            try
+            {
+                hBusiness.Add(hollows);
+                Console.WriteLine("The Hollow has been added!");
+
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error! Incorrect data!");
+            }
         }
         public override void Update()
         {
@@ -83,8 +91,16 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) hollow.Description = data;
 
+                try
+                {
                 hBusiness.Update(hollow);
                 Console.WriteLine("The Hollow has been updated!");
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error! Incorrect data!");
+                }
             }
             else
             {

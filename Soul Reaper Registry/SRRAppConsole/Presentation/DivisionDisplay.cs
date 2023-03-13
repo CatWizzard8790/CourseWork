@@ -34,7 +34,7 @@ namespace SRRAppConsole.Presentation
             Console.WriteLine(@"  _                         
  | \ o    o  _ o  _  ._   _ 
  |_/ | \/ | _> | (_) | | _> ");
-            Console.WriteLine(new string('-', 30 ));
+            Console.WriteLine(new string('-', 30));
             var products = divBusiness.GetAll();
             foreach (var item in products)
             {
@@ -61,8 +61,17 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) product.Description = data;
 
-            divBusiness.Add(product);
-            Console.WriteLine("The Division has been added!");
+            try
+            {
+                divBusiness.Add(product);
+                Console.WriteLine("The Division has been added!");
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error! Incorrect data!");
+            }
         }
         public override void Update()
         {
@@ -89,8 +98,15 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.Description = data;
 
-                divBusiness.Update(sr);
-                Console.WriteLine("The Division has been updated!");
+                try
+                {
+                    divBusiness.Update(sr);
+                    Console.WriteLine("The Division has been updated!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Incorrect data!");
+                }
             }
             else
             {
@@ -125,12 +141,21 @@ namespace SRRAppConsole.Presentation
             Division product = divBusiness.Get(id);
             if (product != null)
             {
-                divBusiness.Delete(id);
-                Console.WriteLine("The Devision has been deleted!");
+                try
+                {
+                    divBusiness.Delete(id);
+                    Console.WriteLine("The Division has been deleted!");
+
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Error! Item could not be deleted!");
+                    
+                }
             }
             else
             {
-                Console.WriteLine("Devision not found!");
+                Console.WriteLine("Division not found!");
             }
         }
 
