@@ -4,14 +4,16 @@ using Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
-    partial class SRRContextModelSnapshot : ModelSnapshot
+    [Migration("20230318132740_spdivsefe")]
+    partial class spdivsefe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -54,10 +56,13 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("ClassId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HollowClassificationId")
+                    b.Property<int?>("HollowClassificationHCId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -66,14 +71,17 @@ namespace Data.Migrations
                     b.Property<int?>("SRId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SoulReaperSRId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("WeaponPowerId")
                         .HasColumnType("int");
 
                     b.HasKey("HId");
 
-                    b.HasIndex("HollowClassificationId");
+                    b.HasIndex("HollowClassificationHCId");
 
-                    b.HasIndex("SRId");
+                    b.HasIndex("SoulReaperSRId");
 
                     b.HasIndex("WeaponPowerId");
 
@@ -211,13 +219,11 @@ namespace Data.Migrations
                 {
                     b.HasOne("Data.Models.HollowClassification", "HollowClassification")
                         .WithMany("Hollows")
-                        .HasForeignKey("HollowClassificationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("HollowClassificationHCId");
 
                     b.HasOne("Data.Models.SoulReaper", "SoulReaper")
                         .WithMany("Hollows")
-                        .HasForeignKey("SRId");
+                        .HasForeignKey("SoulReaperSRId");
 
                     b.HasOne("Data.Models.WeaponPower", "WeaponPower")
                         .WithMany()

@@ -19,18 +19,25 @@ namespace Data.Models
 
         public string Name { get; set; }
 
-        [ForeignKey("ClassificationId")]
-        public int ClassId { get; set; }
+        [ForeignKey("HollowClassification")]
+        public int HollowClassificationId { get; set; }
         public HollowClassification HollowClassification { get; set; }
 
-        [ForeignKey("WeaponPowerId")]
+        [ForeignKey("WeaponPower")]
         public int? WeaponPowerId { get; set; }
         public WeaponPower WeaponPower { get; set; }
 
         public string? Description { get; set; }
 
-        [ForeignKey("SoulReaperId")]
+        [ForeignKey("SoulReaper")]
         public int? SRId { get; set; }
         public SoulReaper SoulReaper { get; set; }
+
+        public Hollow()
+        {
+            WeaponPowerId = 0;
+            Description = null;
+            SRId = 0;
+        }
     }
 }

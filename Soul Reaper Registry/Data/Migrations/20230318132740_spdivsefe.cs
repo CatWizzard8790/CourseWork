@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Data.Migrations
 {
-    public partial class eeeeeeeeeegrklbvi : Migration
+    public partial class spdivsefe : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -48,7 +48,7 @@ namespace Data.Migrations
                     EnrollDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Available = table.Column<bool>(type: "bit", nullable: false),
                     DivisionId = table.Column<int>(type: "int", nullable: true),
-                    SpecialId = table.Column<int>(type: "int", nullable: true),
+                    SpecialDivisionId = table.Column<int>(type: "int", nullable: true),
                     WeaponName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WeaponPowerId = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -137,18 +137,11 @@ namespace Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     LeaderId = table.Column<int>(type: "int", nullable: true),
-                    DivisionId = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SpecialDivision", x => x.SDId);
-                    table.ForeignKey(
-                        name: "FK_SpecialDivision_Division_DivisionId",
-                        column: x => x.DivisionId,
-                        principalTable: "Division",
-                        principalColumn: "DivisionNumber",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_SpecialDivision_SoulReaper_LeaderId",
                         column: x => x.LeaderId,
@@ -188,21 +181,19 @@ namespace Data.Migrations
                 column: "DivisionId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SoulReaper_SpecialDivisionId",
+                table: "SoulReaper",
+                column: "SpecialDivisionId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_SoulReaper_WeaponPowerId",
                 table: "SoulReaper",
                 column: "WeaponPowerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SpecialDivision_DivisionId",
-                table: "SpecialDivision",
-                column: "DivisionId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_SpecialDivision_LeaderId",
                 table: "SpecialDivision",
-                column: "LeaderId",
-                unique: true,
-                filter: "[LeaderId] IS NOT NULL");
+                column: "LeaderId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_SoulReaper_Division_DivisionId",
@@ -210,6 +201,14 @@ namespace Data.Migrations
                 column: "DivisionId",
                 principalTable: "Division",
                 principalColumn: "DivisionNumber",
+                onDelete: ReferentialAction.Restrict);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_SoulReaper_SpecialDivision_SpecialDivisionId",
+                table: "SoulReaper",
+                column: "SpecialDivisionId",
+                principalTable: "SpecialDivision",
+                principalColumn: "SDId",
                 onDelete: ReferentialAction.Restrict);
         }
 
@@ -223,11 +222,12 @@ namespace Data.Migrations
                 name: "FK_Division_SoulReaper_LieutenantId",
                 table: "Division");
 
-            migrationBuilder.DropTable(
-                name: "Hollow");
+            migrationBuilder.DropForeignKey(
+                name: "FK_SpecialDivision_SoulReaper_LeaderId",
+                table: "SpecialDivision");
 
             migrationBuilder.DropTable(
-                name: "SpecialDivision");
+                name: "Hollow");
 
             migrationBuilder.DropTable(
                 name: "HollowClassification");
@@ -237,6 +237,9 @@ namespace Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "Division");
+
+            migrationBuilder.DropTable(
+                name: "SpecialDivision");
 
             migrationBuilder.DropTable(
                 name: "WeaponPower");
