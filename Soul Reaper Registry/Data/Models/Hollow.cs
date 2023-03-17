@@ -28,10 +28,9 @@ namespace Data.Models
         public WeaponPower WeaponPower { get; set; }
 
         public string? Description { get; set; }
-        public Hollow()
-        {
-            this.MissionId = new List<Mission>();
-        }
-        public ICollection<Mission> MissionId { get; set; }
+
+        [ForeignKey("SoulReaperId")]
+        public int? SRId { get; set; }
+        public SoulReaper SoulReaper { get; set; }
     }
 }

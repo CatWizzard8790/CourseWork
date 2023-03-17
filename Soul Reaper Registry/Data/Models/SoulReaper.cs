@@ -36,12 +36,6 @@ namespace Data.Models
         public WeaponPower WeaponPowers { get; set; }
 
         public string? Description { get; set; }
-        
-        public SoulReaper()
-        {
-            this.MissionsId = new List<Mission>();
-        }
-        public virtual ICollection<Mission> MissionsId { get; set; }
 
     }
 }
