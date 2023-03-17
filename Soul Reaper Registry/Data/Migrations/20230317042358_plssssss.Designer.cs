@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
-    [Migration("20230317014855_Jimmy")]
-    partial class Jimmy
+    [Migration("20230317042358_plssssss")]
+    partial class plssssss
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,13 +56,10 @@ namespace Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ClassId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("HollowClassificationHCId")
+                    b.Property<int>("HollowClassificationId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -71,17 +68,14 @@ namespace Data.Migrations
                     b.Property<int?>("SRId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SoulReaperSRId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("WeaponPowerId")
                         .HasColumnType("int");
 
                     b.HasKey("HId");
 
-                    b.HasIndex("HollowClassificationHCId");
+                    b.HasIndex("HollowClassificationId");
 
-                    b.HasIndex("SoulReaperSRId");
+                    b.HasIndex("SRId");
 
                     b.HasIndex("WeaponPowerId");
 
@@ -219,11 +213,13 @@ namespace Data.Migrations
                 {
                     b.HasOne("Data.Models.HollowClassification", "HollowClassification")
                         .WithMany("Hollows")
-                        .HasForeignKey("HollowClassificationHCId");
+                        .HasForeignKey("HollowClassificationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Data.Models.SoulReaper", "SoulReaper")
                         .WithMany("Hollows")
-                        .HasForeignKey("SoulReaperSRId");
+                        .HasForeignKey("SRId");
 
                     b.HasOne("Data.Models.WeaponPower", "WeaponPower")
                         .WithMany()
