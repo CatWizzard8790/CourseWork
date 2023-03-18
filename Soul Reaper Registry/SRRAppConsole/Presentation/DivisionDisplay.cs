@@ -1,5 +1,6 @@
 ﻿using Business.Models;
 using Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,9 +37,11 @@ namespace SRRAppConsole.Presentation
  |_/ | \/ | _> | (_) | | _> ");
             Console.WriteLine(new string('-', 30));
             var products = divBusiness.GetAll();
-            foreach (var item in products)
+            foreach (var item in sRRContext.Division.Include(s => s.SoulReapers))
             {
-                Console.WriteLine($"Id: {item.DivisionNumber}| Name: {item.Name}| Captain Id : {item.CaptainId}| Lieutenant Id :{item.LieutenantId}| Description : {item.Description}|");
+
+                Console.WriteLine($"Id: {item.DivisionNumber}| Name: {item.Name}| Captain : {(item.Captain == null ? " ": item.Captain.FirstName)} {(item.Captain == null ? " " : item.Captain.LastName)} | Lieutenant : {(item.Lieutenant == null ? " ": item.Lieutenant.FirstName)} {(item.Lieutenant == null ? " " : item.Lieutenant.LastName)} | Description : {(item.Description == null ? " " : item.Description)}|\n" +
+                    $" ");
             }
         }
         public override void Add()

@@ -1,4 +1,5 @@
 ﻿
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,11 @@ namespace SRRAppConsole.Presentation
     {
         private int closeOperationId = 6;
         private int operation = -1;
+        public SRRContext sRRContext;
+
         public Display()
         {
+            sRRContext = new SRRContext();
             Input();
         }
         public virtual void ShowMenu() { }

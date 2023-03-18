@@ -1,5 +1,6 @@
 ﻿using Business.Models;
 using Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,9 +35,9 @@ namespace SRRAppConsole.Presentation
 | |(_) |  | (_)\^/_> ");
             Console.WriteLine(new string('-', 20));
             var hcs = hBusiness.GetAll();
-            foreach (var item in hcs)
+            foreach (var item in sRRContext.Hollow.Include(s => s.HollowClassification).Include(s => s.WeaponPower))
             {
-                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class Id: {item.ClassId}| Weapon Power Id: {item.WeaponPowerId} Description: {item.Description}|");
+                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class: { item.HollowClassification.Name}| Weapon Power: {(item.WeaponPower == null ? " " : item.WeaponPower.FirstForm)} Description: {item.Description}|");
             }
         }
         public override void Add()
@@ -47,12 +48,16 @@ namespace SRRAppConsole.Presentation
             Console.Write("Name: ");
             hollows.Name = Console.ReadLine();
 
-            Console.Write("Class Id");
-            hollows.ClassId = int.Parse(Console.ReadLine());
+            Console.Write("Class Id: ");
+            hollows.HollowClassificationId = int.Parse(Console.ReadLine());
 
             Console.Write("Weapon Power Id: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) hollows.WeaponPowerId = int.Parse(data);
+
+            Console.Write("Soul Reaper Id: ");
+            data = Console.ReadLine();
+            if (EmptyStringChecker(data)) hollows.SRId = int.Parse(data);
 
             Console.Write("Description: ");
             data = Console.ReadLine();
@@ -64,7 +69,7 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("The Hollow has been added!");
 
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 Console.WriteLine("Error! Incorrect data!");
             }
@@ -81,11 +86,15 @@ namespace SRRAppConsole.Presentation
                 hollow.Name = Console.ReadLine();
 
                 Console.Write("Class Id");
-                hollow.ClassId = int.Parse(Console.ReadLine());
+                hollow.HollowClassificationId = int.Parse(Console.ReadLine());
 
                 Console.Write("Weapon Power Id: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) hollow.WeaponPowerId = int.Parse(data);
+
+                Console.Write("Soul Reaper Id: ");
+                data = Console.ReadLine();
+                if (EmptyStringChecker(data)) hollow.SRId = int.Parse(data);
 
                 Console.Write("Description: ");
                 data = Console.ReadLine();
@@ -118,8 +127,9 @@ namespace SRRAppConsole.Presentation
 
                 Console.WriteLine("ID: " + hcs.HId);
                 Console.WriteLine("Name: " + hcs.Name);
-                Console.WriteLine("Class Id: " + hcs.ClassId);
-                Console.WriteLine("WeaPon Power Id: " + hcs.WeaponPowerId);
+                Console.WriteLine("Class Id: " + hcs.HollowClassificationId);
+                Console.WriteLine("Weapon Power Id: " + hcs.WeaponPowerId);
+                Console.WriteLine("Soul Reaper Id: " + hcs.SRId);
                 Console.WriteLine("Description: " + hcs.Description);
 
                 Console.WriteLine(new string('-', 40));

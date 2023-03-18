@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
-    [Migration("20230318131613_coloctionperfect")]
-    partial class coloctionperfect
+    [Migration("20230318152546_efser")]
+    partial class efser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

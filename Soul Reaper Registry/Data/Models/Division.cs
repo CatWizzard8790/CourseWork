@@ -14,6 +14,7 @@ namespace Data.Models
     /// </summary>
     public class Division
     {
+
         [Key]
         public int DivisionNumber { get; set; }
 
@@ -32,6 +33,11 @@ namespace Data.Models
         public Division()
         {
             this.SoulReapers = new List<SoulReaper>();
+            CaptainId = 0;
+            Captain = null;
+            Lieutenant = null;
+            LieutenantId = 0;
+            Description = null;
         }
         public ICollection<SoulReaper> SoulReapers { get; set; }
 

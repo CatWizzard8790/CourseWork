@@ -1,6 +1,7 @@
 ﻿using System;
 using Business.Models;
 using Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SRRAppConsole.Presentation
 {
@@ -33,7 +34,7 @@ namespace SRRAppConsole.Presentation
 
         }
         public override void ListAll()
-        {
+        {            
             Console.WriteLine(new string('-', 40));
             Console.WriteLine(@"  __              _                       
  (_   _      |   |_)  _   _. ._   _  ._ _ 
@@ -41,12 +42,11 @@ namespace SRRAppConsole.Presentation
                              |            ");
             Console.WriteLine(new string('-', 40));
             var products = sRRBusiness.GetAll();
-            foreach (var item in products)
+            foreach (var item in sRRContext.SoulReaper.Include(s => s.Division).Include(s => s.SpecialDivision).Include(s => s.WeaponPowers))
             {
-                Console.WriteLine($"Id: {item.SRId}| First Name: {item.FirstName}| Last Name: {item.LastName}| EnrollDate: {item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialDivisionId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|\n" +
+                Console.WriteLine($"Id: {item.SRId}| First Name: {item.FirstName}| Last Name: {item.LastName}| EnrollDate: {item.EnrollDate}| Available: {item.Available}| Division: {(item.Division == null ? " " : item.Division.Name)}| Special Division: {(item.SpecialDivision == null ? " " : item.SpecialDivision.Name)}| Weapon Name: {item.WeaponName}| Weapon Power: {(item.WeaponPowers == null ? " " : item.WeaponPowers.FirstForm)}| Description:  {item.Description}|\n" +
                     $" ");
             }
-
         }
         public override void Add()
         {
@@ -63,7 +63,7 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.EnrollDate = DateTime.Parse(data);
 
-            Console.Write("Available: ");
+            Console.Write("Available (true or false): ");
             sr.Available = bool.Parse(Console.ReadLine());
 
             Console.Write("Division Id: ");
