@@ -52,8 +52,15 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) hollowClassifications.Description = data;
 
-            hCBusiness.Add(hollowClassifications);
-            Console.WriteLine("The Hollow Classification has been added!");
+            try
+            {
+                hCBusiness.Add(hollowClassifications);
+                Console.WriteLine("The Hollow Classification has been added!");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error! Incorrect data!");
+            }
         }
         public override void Update()
         {
@@ -70,9 +77,15 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) hollow.Description = data;
 
-                
-                hCBusiness.Update(hollow);
-                Console.WriteLine("The Hollow Classification has been updated!");
+                try
+                {
+                    hCBusiness.Update(hollow);
+                    Console.WriteLine("The Hollow Classification has been updated!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Incorrect data!");
+                }
             }
             else
             {
@@ -106,8 +119,15 @@ namespace SRRAppConsole.Presentation
             HollowClassification hollow = hCBusiness.Get(id);
             if (hollow != null)
             {
-                hCBusiness.Delete(id);
-                Console.WriteLine("The Hollow Classification has been deleted!");
+                try
+                {
+                    hCBusiness.Delete(id);
+                    Console.WriteLine("The Hollow Classification has been deleted!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Cannot delete item!");
+                }
             }
             else
             {

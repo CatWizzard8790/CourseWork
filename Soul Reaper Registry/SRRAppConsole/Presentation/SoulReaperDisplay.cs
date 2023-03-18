@@ -141,12 +141,12 @@ namespace SRRAppConsole.Presentation
                 try
                 {
                     sRRBusiness.Update(sr);
+                    Console.WriteLine("The Soul Reaper has been updated!");
                 }
                 catch(Exception ex)
                 {
                     Console.WriteLine("Error! Incorrect data!");
                 }
-                Console.WriteLine("The Soul Reaper has been updated!");
             }
             else
             {

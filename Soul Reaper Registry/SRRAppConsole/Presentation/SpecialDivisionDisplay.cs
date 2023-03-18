@@ -62,8 +62,16 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) SPdiv.Description = data;
 
-            sPDBusiness.Add(SPdiv);
-            Console.WriteLine("The Special Division has been added!");
+            try
+            {
+                sPDBusiness.Add(SPdiv);
+                Console.WriteLine("The Special Division has been added!");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error! Incorrect data!");
+            }
         }
         public override void Update()
         {
@@ -88,8 +96,15 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) SPDiv.Description = data;
 
-                sPDBusiness.Update(SPDiv);
-                Console.WriteLine("The Special Division has been updated!");
+                try
+                {
+                    sPDBusiness.Update(SPDiv);
+                    Console.WriteLine("The Special Division has been updated!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Incorrect data!");
+                }
             }
             else
             {
@@ -125,8 +140,15 @@ namespace SRRAppConsole.Presentation
             SpecialDivision SPDS = sPDBusiness.Get(id);
             if (SPDS != null)
             {
-                sPDBusiness.Delete(id);
-                Console.WriteLine("The Special Division has been deleted!");
+                try
+                {
+                    sPDBusiness.Delete(id);
+                    Console.WriteLine("The Special Division has been deleted!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Cannot delete item!");
+                }
             }
             else
             {

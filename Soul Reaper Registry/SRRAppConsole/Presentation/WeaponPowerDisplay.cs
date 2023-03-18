@@ -61,8 +61,17 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) WPs.Description = data;
 
-            wPBusiness.Add(WPs);
-            Console.WriteLine("The Weapon Power has been added!");
+            try
+            {
+                wPBusiness.Add(WPs);
+                Console.WriteLine("The Weapon Power has been added!");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error! Incorrect data!");
+            }
+            
         }
         public override void Update()
         {
@@ -86,8 +95,15 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) WPs.Description = data;
 
-                wPBusiness.Update(WPs);
-                Console.WriteLine("The Weapon Power has been updated!");
+                try
+                {
+                    wPBusiness.Update(WPs);
+                    Console.WriteLine("The Weapon Power has been updated!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Incorrect data!");
+                }
             }
             else
             {
@@ -122,8 +138,15 @@ namespace SRRAppConsole.Presentation
             WeaponPower WPs = wPBusiness.Get(id);
             if (WPs != null)
             {
-                wPBusiness.Delete(id);
-                Console.WriteLine("The Weapon Power has been deleted!");
+                try
+                {
+                    wPBusiness.Delete(id);
+                    Console.WriteLine("The Weapon Power has been deleted!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Cannot delete item!");
+                }
             }
             else
             {

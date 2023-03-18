@@ -93,8 +93,8 @@ namespace SRRAppConsole.Presentation
 
                 try
                 {
-                hBusiness.Update(hollow);
-                Console.WriteLine("The Hollow has been updated!");
+                    hBusiness.Update(hollow);
+                    Console.WriteLine("The Hollow has been updated!");
 
                 }
                 catch (Exception)
@@ -136,8 +136,15 @@ namespace SRRAppConsole.Presentation
             Hollow hollow = hBusiness.Get(id);
             if (hollow != null)
             {
-                hBusiness.Delete(id);
-                Console.WriteLine("The Hollow has been deleted!");
+                try
+                {
+                    hBusiness.Delete(id);
+                    Console.WriteLine("The Hollow has been deleted!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Cannot delete item!");
+                }
             }
             else
             {
