@@ -10,8 +10,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
+<<<<<<<< HEAD:Soul Reaper Registry/Data/Migrations/20230318120320_eeeeeeeeeegrklbvi.Designer.cs
     [Migration("20230318120320_eeeeeeeeeegrklbvi")]
     partial class eeeeeeeeeegrklbvi
+========
+    [Migration("20230317002535_aaaaaaaa")]
+    partial class aaaaaaaa
+>>>>>>>> c834162cda084a5e48d774341a44f998c2f57b1b:Soul Reaper Registry/Data/Migrations/20230317002535_aaaaaaaa.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
