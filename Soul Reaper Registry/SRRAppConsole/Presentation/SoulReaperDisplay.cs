@@ -94,7 +94,6 @@ namespace SRRAppConsole.Presentation
             catch (Exception e)
             {
                 Console.WriteLine("Error! Incorrect data!");
-                throw;
             }
         }
         public override void Update()
