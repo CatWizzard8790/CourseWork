@@ -44,15 +44,6 @@ namespace SRRAppConsole
                             display = new HollowClassificationDisplay();
                             break;
                         case 7:
-                            display = new MissionSoulReaperDisplay();
-                            break;
-                        case 8:
-                            display = new MissionHollowDisplay();
-                            break;
-                        case 9:
-                            display = new MissionDisplay();
-                            break;
-                        case 10:
                             Environment.Exit(0);
                             break;
                         default:
@@ -92,10 +83,7 @@ namespace SRRAppConsole
             Console.WriteLine("4. Weapon Powers");
             Console.WriteLine("5. Hollow");
             Console.WriteLine("6. Hollow Classifications");
-            Console.WriteLine("7. Soul Reapers Mission");
-            Console.WriteLine("8. Hollow Mission");
-            Console.WriteLine("9. Mission");
-            Console.WriteLine("10. Close Application");
+            Console.WriteLine("7. Close Application");
         }
     }
 }

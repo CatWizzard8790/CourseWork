@@ -2,7 +2,7 @@
 
 namespace Data.Migrations
 {
-    public partial class foreignfinal : Migration
+    public partial class problemsolvedquestionmark : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

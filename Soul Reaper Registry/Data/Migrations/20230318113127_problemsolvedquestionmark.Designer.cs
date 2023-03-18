@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(SRRContext))]
-    [Migration("20230309102518_foreign")]
-    partial class foreign
+    [Migration("20230318113127_problemsolvedquestionmark")]
+    partial class problemsolvedquestionmark
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,9 +42,9 @@ namespace Data.Migrations
 
                     b.HasKey("DivisionNumber");
 
-                    b.HasIndex("CaptainId")
-                        .IsUnique()
-                        .HasFilter("[CaptainId] IS NOT NULL");
+                    b.HasIndex("CaptainId");
+
+                    b.HasIndex("LieutenantId");
 
                     b.ToTable("Division");
                 });
@@ -68,12 +68,20 @@ namespace Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("SRId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SoulReaperSRId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("WeaponPowerId")
                         .HasColumnType("int");
 
                     b.HasKey("HId");
 
                     b.HasIndex("HollowClassificationHCId");
+
+                    b.HasIndex("SoulReaperSRId");
 
                     b.HasIndex("WeaponPowerId");
 
@@ -96,64 +104,6 @@ namespace Data.Migrations
                     b.HasKey("HCId");
 
                     b.ToTable("HollowClassification");
-                });
-
-            modelBuilder.Entity("Data.Models.Mission", b =>
-                {
-                    b.Property<int>("MId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime?>("DateCompleted")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("MId");
-
-                    b.ToTable("Mission");
-                });
-
-            modelBuilder.Entity("Data.Models.MissionHollow", b =>
-                {
-                    b.Property<int>("MissionsId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("HollowHId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HollowsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MissionsId");
-
-                    b.HasIndex("HollowHId");
-
-                    b.ToTable("MissionsHollow");
-                });
-
-            modelBuilder.Entity("Data.Models.MissionSoulReaper", b =>
-                {
-                    b.Property<int>("SRId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("MissionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("SRId");
-
-                    b.HasIndex("MissionId");
-
-                    b.ToTable("MissionsSoulReaper");
                 });
 
             modelBuilder.Entity("Data.Models.SoulReaper", b =>
@@ -191,6 +141,8 @@ namespace Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("SRId");
+
+                    b.HasIndex("DivisionId");
 
                     b.HasIndex("WeaponPowerId");
 
@@ -254,10 +206,18 @@ namespace Data.Migrations
             modelBuilder.Entity("Data.Models.Division", b =>
                 {
                     b.HasOne("Data.Models.SoulReaper", "Captain")
-                        .WithOne("Division")
-                        .HasForeignKey("Data.Models.Division", "CaptainId");
+                        .WithMany()
+                        .HasForeignKey("CaptainId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Data.Models.SoulReaper", "Lieutenant")
+                        .WithMany()
+                        .HasForeignKey("LieutenantId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Captain");
+
+                    b.Navigation("Lieutenant");
                 });
 
             modelBuilder.Entity("Data.Models.Hollow", b =>
@@ -266,40 +226,32 @@ namespace Data.Migrations
                         .WithMany()
                         .HasForeignKey("HollowClassificationHCId");
 
+                    b.HasOne("Data.Models.SoulReaper", "SoulReaper")
+                        .WithMany()
+                        .HasForeignKey("SoulReaperSRId");
+
                     b.HasOne("Data.Models.WeaponPower", "WeaponPower")
                         .WithMany()
                         .HasForeignKey("WeaponPowerId");
 
                     b.Navigation("HollowClassification");
 
+                    b.Navigation("SoulReaper");
+
                     b.Navigation("WeaponPower");
-                });
-
-            modelBuilder.Entity("Data.Models.MissionHollow", b =>
-                {
-                    b.HasOne("Data.Models.Hollow", "Hollow")
-                        .WithMany()
-                        .HasForeignKey("HollowHId");
-
-                    b.Navigation("Hollow");
-                });
-
-            modelBuilder.Entity("Data.Models.MissionSoulReaper", b =>
-                {
-                    b.HasOne("Data.Models.Mission", "Mission")
-                        .WithMany()
-                        .HasForeignKey("MissionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Mission");
                 });
 
             modelBuilder.Entity("Data.Models.SoulReaper", b =>
                 {
+                    b.HasOne("Data.Models.Division", "Division")
+                        .WithMany()
+                        .HasForeignKey("DivisionId");
+
                     b.HasOne("Data.Models.WeaponPower", "WeaponPowers")
                         .WithMany()
                         .HasForeignKey("WeaponPowerId");
+
+                    b.Navigation("Division");
 
                     b.Navigation("WeaponPowers");
                 });
@@ -321,8 +273,6 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Data.Models.SoulReaper", b =>
                 {
-                    b.Navigation("Division");
-
                     b.Navigation("SpecialDivision");
                 });
 #pragma warning restore 612, 618
