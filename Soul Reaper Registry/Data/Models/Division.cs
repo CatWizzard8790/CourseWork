@@ -29,6 +29,11 @@ namespace Data.Models
         public SoulReaper Lieutenant { get; set; }
 
         public string? Description { get; set; }
+        public Division()
+        {
+            this.SoulReapers = new List<SoulReaper>();
+        }
+        public ICollection<SoulReaper> SoulReapers { get; set; }
 
     }
 }

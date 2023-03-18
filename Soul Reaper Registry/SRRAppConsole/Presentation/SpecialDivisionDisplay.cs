@@ -39,7 +39,7 @@ namespace SRRAppConsole.Presentation
             var SDiv = sPDBusiness.GetAll();
             foreach (var item in SDiv)
             {
-                Console.WriteLine($"Special Division Id: {item.SDId}| Name: {item.Name}| Leader Id: {item.LeaderId}| Division Id: {item.DivisionId}| Description: {item.Description}|");
+                Console.WriteLine($"Special Division Id: {item.SDId}| Name: {item.Name}| Leader Id: {item.LeaderId}| Description: {item.Description}|");
             }
         }
         public override void Add()
@@ -53,10 +53,6 @@ namespace SRRAppConsole.Presentation
             Console.Write("Leader Id: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) SPdiv.LeaderId = int.Parse(data);
-
-            Console.Write("Division Id: ");
-            data = Console.ReadLine();
-            if (EmptyStringChecker(data)) SPdiv.DivisionId = int.Parse(data);
 
             Console.Write("Description: ");
             data = Console.ReadLine();
@@ -88,9 +84,6 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) SPDiv.LeaderId = int.Parse(data);
 
-                Console.Write("Division Id: ");
-                data = Console.ReadLine();
-                if (EmptyStringChecker(data)) SPDiv.DivisionId = int.Parse(data);
 
                 Console.Write("Description: ");
                 data = Console.ReadLine();
@@ -123,7 +116,6 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("Special Division Id: " + SPDs.SDId);
                 Console.WriteLine("Name: " + SPDs.Name);
                 Console.WriteLine("Leader Id: " + SPDs.LeaderId);
-                Console.WriteLine("Division Id: " + SPDs.DivisionId);
                 Console.WriteLine("Description: " + SPDs.Description);
 
                 Console.WriteLine(new string('-', 40));

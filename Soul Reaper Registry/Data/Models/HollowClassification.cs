@@ -17,5 +17,11 @@ namespace Data.Models
 
         public string Name { get; set; }
         public string? Description { get; set; }
+
+        public HollowClassification()
+        {
+            this.Hollows = new List<Hollow>();
+        }
+        public ICollection<Hollow> Hollows { get; set; }
     }
 }

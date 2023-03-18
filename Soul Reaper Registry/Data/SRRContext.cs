@@ -39,6 +39,25 @@ namespace Data
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<SpecialDivision>()
+                .HasOne(d => d.Leader)
+                .WithMany()
+                .HasForeignKey(d => d.LeaderId)
+                .IsRequired(false)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<SoulReaper>()
+                .HasMany(h => h.Hollows);
+
+            modelBuilder.Entity<Division>()
+                .HasMany(s => s.SoulReapers);
+
+            modelBuilder.Entity<SpecialDivision>()
+                .HasMany(s => s.SoulReapers);
+
+            modelBuilder.Entity<HollowClassification>()
+                .HasMany(h => h.Hollows);
+
 
             //modelBuilder.Entity<MissionHollow>()
             //    .HasKey(mh => new { mh.HollowsId, mh.MissionsId });

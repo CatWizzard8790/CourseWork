@@ -25,8 +25,8 @@ namespace Data.Models
         public int? DivisionId { get; set; }
         public Division Division { get; set; }
 
-        [ForeignKey("SpecialDivisionId")]
-        public int? SpecialId { get; set; }
+        [ForeignKey("SpecialDivision")]
+        public int? SpecialDivisionId { get; set; }
         public SpecialDivision SpecialDivision { get; set; }
 
         public string WeaponName { get; set; }
@@ -36,6 +36,12 @@ namespace Data.Models
         public WeaponPower WeaponPowers { get; set; }
 
         public string? Description { get; set; }
+
+        public SoulReaper()
+        {
+            this.Hollows = new List<Hollow>();
+        }
+        public ICollection<Hollow> Hollows { get; set; }
 
     }
 }

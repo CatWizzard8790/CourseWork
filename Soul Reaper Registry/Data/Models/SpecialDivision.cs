@@ -22,10 +22,12 @@ namespace Data.Models
         public int? LeaderId { get; set; }
         public SoulReaper Leader{ get; set; }
 
-        [ForeignKey("Division")]
-        public int? DivisionId { get; set; }
-        public Division Division { get; set; }
-
         public string? Description { get; set; }
+
+        public SpecialDivision()
+        {
+            this.SoulReapers = new List<SoulReaper>();
+        }
+        public ICollection<SoulReaper> SoulReapers { get; set; }
     }
 }

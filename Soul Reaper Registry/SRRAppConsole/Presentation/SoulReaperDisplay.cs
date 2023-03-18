@@ -43,7 +43,7 @@ namespace SRRAppConsole.Presentation
             var products = sRRBusiness.GetAll();
             foreach (var item in products)
             {
-                Console.WriteLine($"Id: {item.SRId}| First Name: {item.FirstName}| Last Name: {item.LastName}| EnrollDate: {item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|\n" +
+                Console.WriteLine($"Id: {item.SRId}| First Name: {item.FirstName}| Last Name: {item.LastName}| EnrollDate: {item.EnrollDate}| Available: {item.Available}| Division Id: {item.DivisionId}| Special Id:  {item.SpecialDivisionId}| Weapon Name:  {item.WeaponName}| Weapon Power Id:  {item.WeaponPowerId}| Description:  {item.Description}|\n" +
                     $" ");
             }
 
@@ -72,7 +72,7 @@ namespace SRRAppConsole.Presentation
 
             Console.Write("Special Id: ");
             data = Console.ReadLine();
-            if (EmptyStringChecker(data)) sr.SpecialId = int.Parse(data);
+            if (EmptyStringChecker(data)) sr.SpecialDivisionId = int.Parse(data);
 
             Console.Write("Weapon Name: ");
             sr.WeaponName = Console.ReadLine();
@@ -103,7 +103,7 @@ namespace SRRAppConsole.Presentation
             SoulReaper sr = sRRBusiness.Get(id);
             if (sr != null)
             {
-                Console.WriteLine($"Id: {sr.SRId}| First Name: {sr.FirstName}| Last Name: {sr.LastName}| EnrollDate: {sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
+                Console.WriteLine($"Id: {sr.SRId}| First Name: {sr.FirstName}| Last Name: {sr.LastName}| EnrollDate: {sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialDivisionId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
                 string data;
 
                 Console.Write("First Name: ");
@@ -125,7 +125,7 @@ namespace SRRAppConsole.Presentation
 
                 Console.Write("Special Id: ");
                 data = Console.ReadLine();
-                if (EmptyStringChecker(data)) sr.SpecialId = int.Parse(data);
+                if (EmptyStringChecker(data)) sr.SpecialDivisionId = int.Parse(data);
 
                 Console.Write("Weapon Name: ");
                 sr.WeaponName = Console.ReadLine();
@@ -167,7 +167,7 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine($"Enroll Date: {sr.EnrollDate}");
                 Console.WriteLine($"Available: {sr.Available}");
                 Console.WriteLine($"Division Id: {sr.DivisionId}");
-                Console.WriteLine($"Special Id: {sr.SpecialId}");
+                Console.WriteLine($"Special Id: {sr.SpecialDivisionId}");
                 Console.WriteLine("Weapon Name: " + sr.WeaponName);
                 Console.WriteLine("Weapon Power Id: " + sr.WeaponPowerId);
                 Console.WriteLine("Description: " + sr.Description);
