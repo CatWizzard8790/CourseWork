@@ -138,7 +138,14 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.Description = data;
 
-                sRRBusiness.Update(sr);
+                try
+                {
+                    sRRBusiness.Update(sr);
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("Error! Incorrect data!");
+                }
                 Console.WriteLine("The Soul Reaper has been updated!");
             }
             else
@@ -179,8 +186,16 @@ namespace SRRAppConsole.Presentation
             SoulReaper product = sRRBusiness.Get(id);
             if (product != null)
             {
-                sRRBusiness.Delete(id);
-                Console.WriteLine("The Soul Reaper has been deleted!");
+                try
+                {
+                    sRRBusiness.Delete(id);
+                    Console.WriteLine("The Soul Reaper has been deleted!");
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error! Cannot delete item!");
+                }
             }
             else
             {
