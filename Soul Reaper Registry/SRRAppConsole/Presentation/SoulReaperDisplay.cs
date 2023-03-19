@@ -5,6 +5,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SRRAppConsole.Presentation
 {
+    /// <summary>
+    /// Implements the CRUD methods from Display for Soul Reapers.
+    /// </summary>
     public class SoulReaperDisplay : Display
     {
         SRRBusiness sRRBusiness = new SRRBusiness();

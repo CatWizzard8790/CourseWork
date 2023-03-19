@@ -8,6 +8,9 @@ using Data.Models;
 
 namespace Business.Models
 {
+    /// <summary>
+    /// Controller for the Hollows class. It allows the usage of the GetAll, Get, Add Update, Delete operations for the Hollow table.
+    /// </summary>
     public class HBusiness
     {
         private SRRContext sRRContext;

@@ -15,6 +15,8 @@ namespace SRRAppConsole
         {
             var operation = -1;
             int closeOperationId = 10;
+
+            // Reads the input and sends it to the coresponding class/method
             do
             {
                 if (operation != closeOperationId)
@@ -65,6 +67,7 @@ namespace SRRAppConsole
 
         }
 
+        // Shows the main user menu on the console
         public static void MainMenu()
         {
             Console.WriteLine(new string('=', 100));

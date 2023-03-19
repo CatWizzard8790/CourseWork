@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
+    /// <summary>
+    /// Implements the CRUD methods from Display for Special Division.
+    /// </summary>
     public class SpecialDivisionDisplay : Display
     {
         SPDivBusiness sPDBusiness = new SPDivBusiness();

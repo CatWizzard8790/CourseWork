@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
+    /// <summary>
+    /// Implements the CRUD methods from Display for Weapon Power.
+    /// </summary>
     public class WeaponPowerDisplay : Display
     {
         WPBusiness wPBusiness = new WPBusiness();

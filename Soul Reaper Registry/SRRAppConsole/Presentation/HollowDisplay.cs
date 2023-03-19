@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
+    /// <summary>
+    /// Implements the CRUD methods from Display for Hollow.
+    /// </summary>
     public class HollowDisplay : Display
     {
         HBusiness hBusiness = new HBusiness();
