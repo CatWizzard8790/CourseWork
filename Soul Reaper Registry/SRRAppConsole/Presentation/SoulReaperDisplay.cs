@@ -157,7 +157,11 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SoulReaper sr = sRRBusiness.Get(id);
+            SoulReaper sr = sRRContext.SoulReaper.Find(id);
+            sRRContext.Entry(sr).Reference(d => d.Division).Load();
+            sRRContext.Entry(sr).Reference(s => s.SpecialDivision).Load();
+            sRRContext.Entry(sr).Reference(w => w.WeaponPowers).Load();
+
             if (sr != null)
             {
                 Console.WriteLine(new string('-', 40));
@@ -166,10 +170,10 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("Last Name: " + sr.LastName);
                 Console.WriteLine($"Enroll Date: {sr.EnrollDate}");
                 Console.WriteLine($"Available: {sr.Available}");
-                Console.WriteLine($"Division Id: {sr.DivisionId} {sr.Division.Name}");
-                Console.WriteLine($"Special Id: {sr.SpecialDivisionId}");
+                Console.WriteLine($"Division Id: {sr.DivisionId}| Division Name: {(sr.Division == null ? " " : sr.Division.Name)}");
+                Console.WriteLine($"Special Id: {sr.SpecialDivisionId}| Special Devision Name: {(sr.SpecialDivision == null ? " " : sr.SpecialDivision.Name)}");
                 Console.WriteLine("Weapon Name: " + sr.WeaponName);
-                Console.WriteLine("Weapon Power Id: " + sr.WeaponPowerId);
+                Console.WriteLine("Weapon Power Id: " + sr.WeaponPowerId + $"| Weapon Power: {(sr.WeaponPowers == null ? " " : sr.WeaponPowers.FirstForm)}");
                 Console.WriteLine("Description: " + sr.Description);
 
                 Console.WriteLine(new string('-', 40));

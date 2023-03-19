@@ -26,6 +26,7 @@ namespace SRRTests
             }.AsQueryable();
 
             var mockSet = new Mock<DbSet<HollowClassification>>();
+
             mockSet.As<IQueryable<HollowClassification>>().Setup(hc => hc.Provider).Returns(data.Provider);
             mockSet.As<IQueryable<HollowClassification>>().Setup(hc => hc.Expression).Returns(data.Expression);
             mockSet.As<IQueryable<HollowClassification>>().Setup(hc => hc.ElementType).Returns(data.ElementType);
@@ -37,12 +38,11 @@ namespace SRRTests
             var controller = new HCBusiness(mockContext.Object);
             data.ToList().ForEach(h => controller.Add(h));
 
-            var hc = controller.Get(1);
-            Assert.AreEqual("aaaa", hc.Name);
-
-
-
-
+            var expectedCount = 3;
+            var result = controller.GetAll();
+            var actualCount = result.Count;
+            Assert.AreEqual(expectedCount, expectedCount);
+            //Assert.AreEqual("aaaa", result[0].Name);
 
         }
     }

@@ -37,11 +37,12 @@ namespace SRRAppConsole.Presentation
  |_/ | \/ | _> | (_) | | _> ");
             Console.WriteLine(new string('-', 30));
             var products = divBusiness.GetAll();
-            foreach (var item in sRRContext.Division.Include(s => s.SoulReapers))
+            foreach (var item in sRRContext.Division.Include(s => s.Captain).Include(l => l.Lieutenant))
             {
 
-                Console.WriteLine($"Id: {item.DivisionNumber}| Name: {item.Name}| Captain : {(item.Captain == null ? " ": item.Captain.FirstName)} {(item.Captain == null ? " " : item.Captain.LastName)} | Lieutenant : {(item.Lieutenant == null ? " ": item.Lieutenant.FirstName)} {(item.Lieutenant == null ? " " : item.Lieutenant.LastName)} | Description : {(item.Description == null ? " " : item.Description)}|\n" +
+                Console.WriteLine($"Id: {item.DivisionNumber}| Name: {item.Name}| Captain : {(item.Captain == null ? " " : item.Captain.FirstName)} {(item.Captain == null ? " " : item.Captain.LastName)} | Lieutenant : {(item.Lieutenant == null ? " " : item.Lieutenant.FirstName)} {(item.Lieutenant == null ? " " : item.Lieutenant.LastName)} | Description : {(item.Description == null ? " " : item.Description)}|\n" +
                     $" ");
+
             }
         }
         public override void Add()
@@ -120,15 +121,30 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Division sr = divBusiness.Get(id);
+            Division sr = sRRContext.Division.Find(id);
+            sRRContext.Entry(sr).Reference(c => c.Captain).Load();
+            sRRContext.Entry(sr).Reference(l => l.Lieutenant).Load();
+            sRRContext.Entry(sr).Collection(sr => sr.SoulReapers).Load();
+
             if (sr != null)
             {
                 Console.WriteLine(new string('-', 40));
                 Console.WriteLine("ID: " + sr.DivisionNumber);
                 Console.WriteLine("Name: " + sr.Name);
-                Console.WriteLine("Captain Id: " + sr.CaptainId);
-                Console.WriteLine($"LieutenantId: {sr.LieutenantId}");
+                Console.WriteLine("Captain Id: " + sr.CaptainId + $"| {(sr.Captain == null ? " " : sr.Captain.FirstName)} {(sr.Captain == null ? " " : sr.Captain.LastName)}");
+                Console.WriteLine($"LieutenantId: {sr.LieutenantId}" + $"| {(sr.Lieutenant == null ? " " : sr.Lieutenant.FirstName)} {(sr.Lieutenant == null ? " " : sr.Lieutenant.LastName)}");
                 Console.WriteLine($"Description: {sr.Description}");
+
+                Console.WriteLine(new string('-', 40));
+
+                Console.WriteLine("Division Members: \n");
+                int counter = 1;
+                
+                foreach (var srr in sr.SoulReapers)
+                {
+                    Console.WriteLine($"{counter}. {(srr.FirstName == null ? " " : srr.FirstName)} {(srr.LastName == null ? " " : srr.LastName)} \n");
+                    counter++;
+                }
 
                 Console.WriteLine(new string('-', 40));
             }
@@ -153,7 +169,7 @@ namespace SRRAppConsole.Presentation
                 catch (Exception)
                 {
                     Console.WriteLine("Error! Item could not be deleted!");
-                    
+
                 }
             }
             else

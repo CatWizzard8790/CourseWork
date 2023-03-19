@@ -38,7 +38,7 @@ namespace SRRAppConsole.Presentation
      |                                              ");
             Console.WriteLine(new string('-', 50));
             var SDiv = sPDBusiness.GetAll();
-            foreach (var item in sRRContext.SpecialDivision.Include(s => s.SoulReapers))
+            foreach (var item in sRRContext.SpecialDivision.Include(s => s.Leader))
             {
                 Console.WriteLine($"Special Division Id: {item.SDId}| Name: {item.Name}| Leader: {(item.Leader == null ? " " : item.Leader.FirstName)} {(item.Leader == null ? " " : item.Leader.LastName)}| Description: {item.Description}|");
             }
@@ -78,13 +78,14 @@ namespace SRRAppConsole.Presentation
             SpecialDivision SPDiv = sPDBusiness.Get(id);
             if (SPDiv != null)
             {
+                Console.WriteLine($"Special Division Id: {SPDiv.SDId}| Name: {SPDiv.Name}| Leader: {SPDiv.LeaderId}| Description: {SPDiv.Description}|");
+
                 Console.Write("Name: ");
                 SPDiv.Name = Console.ReadLine();
 
                 Console.Write("Leader Id: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) SPDiv.LeaderId = int.Parse(data);
-
 
                 Console.Write("Description: ");
                 data = Console.ReadLine();
@@ -109,15 +110,28 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            SpecialDivision SPDs = sPDBusiness.Get(id);
+            SpecialDivision SPDs = sRRContext.SpecialDivision.Find(id);
+            sRRContext.Entry(SPDs).Reference(cp => cp.Leader).Load();
+            sRRContext.Entry(SPDs).Collection(sr => sr.SoulReapers).Load();
             if (SPDs != null)
             {
                 Console.WriteLine(new string('-', 40));
 
                 Console.WriteLine("Special Division Id: " + SPDs.SDId);
                 Console.WriteLine("Name: " + SPDs.Name);
-                Console.WriteLine("Leader Id: " + SPDs.LeaderId);
+                Console.WriteLine("Leader Id: " + SPDs.LeaderId + $"| Leader Name: { (SPDs.Leader == null ? " " : SPDs.Leader.FirstName)} { (SPDs.Leader == null ? " " : SPDs.Leader.LastName)}");
                 Console.WriteLine("Description: " + SPDs.Description);
+
+                Console.WriteLine(new string('-', 40));
+
+                Console.WriteLine("Division Members: \n");
+                int counter = 1;
+
+                foreach (var srr in SPDs.SoulReapers)
+                {
+                    Console.WriteLine($"{counter}. {(srr.FirstName == null ? " " : srr.FirstName)} {(srr.LastName == null ? " " : srr.LastName)} \n");
+                    counter++;
+                }
 
                 Console.WriteLine(new string('-', 40));
             }

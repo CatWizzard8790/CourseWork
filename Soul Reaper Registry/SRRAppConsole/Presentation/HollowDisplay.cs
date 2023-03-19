@@ -121,16 +121,20 @@ namespace SRRAppConsole.Presentation
         {
             Console.Write("Id: ");
             int id = int.Parse(Console.ReadLine());
-            Hollow hcs = hBusiness.Get(id);
+            Hollow hcs = sRRContext.Hollow.Find(id);
+            sRRContext.Entry(hcs).Reference(hc => hc.HollowClassification).Load();
+            sRRContext.Entry(hcs).Reference(wp => wp.WeaponPower).Load();
+            sRRContext.Entry(hcs).Reference(sr => sr.SoulReaper).Load();
+
             if (hcs != null)
             {
                 Console.WriteLine(new string('-', 40));
 
                 Console.WriteLine("ID: " + hcs.HId);
                 Console.WriteLine("Name: " + hcs.Name);
-                Console.WriteLine("Class Id: " + hcs.HollowClassificationId);
-                Console.WriteLine("Weapon Power Id: " + hcs.WeaponPowerId);
-                Console.WriteLine("Soul Reaper Id: " + hcs.SRId);
+                Console.WriteLine("Class Id: " + hcs.HollowClassificationId + $"| Class Name: {(hcs.HollowClassification == null ? " " : hcs.HollowClassification.Name)} ");
+                Console.WriteLine("Weapon Power Id: " + hcs.WeaponPowerId + $"| Weapon Power: {(hcs.WeaponPower == null ? " " : hcs.WeaponPower.FirstForm)}" );
+                Console.WriteLine("Soul Reaper Id: " + hcs.SRId + $"| Soul Reaper Name: {(hcs.SoulReaper == null ? " " : hcs.SoulReaper.FirstName)} {(hcs.SoulReaper == null ? " " : hcs.SoulReaper.LastName)}");
                 Console.WriteLine("Description: " + hcs.Description);
 
                 Console.WriteLine(new string('-', 40));
