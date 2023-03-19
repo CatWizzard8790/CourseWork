@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33213.308
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{A56048ED-FB05-4EE5-8304-7E53C9B00C72}"
 EndProject
@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRRAppConsole", "SRRAppConsole\SRRAppConsole.csproj", "{4A523834-66F1-4936-B3C0-6A9C28B6D59E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRRTests", "SRRTests\SRRTests.csproj", "{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRRTests", "SRRTests\SRRTests.csproj", "{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRRASPNetWebInterface", "SRRASPNetWebInterface\SRRASPNetWebInterface.csproj", "{993AA017-4002-429F-803B-B6A4A1ACB661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993AA017-4002-429F-803B-B6A4A1ACB661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993AA017-4002-429F-803B-B6A4A1ACB661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993AA017-4002-429F-803B-B6A4A1ACB661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993AA017-4002-429F-803B-B6A4A1ACB661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

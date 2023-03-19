@@ -1,0 +1,74 @@
+﻿@model Data.Models.SoulReaper
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>SoulReaper</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SRId" />
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnrollDate" class="control-label"></label>
+                <input asp-for="EnrollDate" class="form-control" />
+                <span asp-validation-for="EnrollDate" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Available" /> @Html.DisplayNameFor(model => model.Available)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DivisionId" class="control-label"></label>
+                <select asp-for="DivisionId" class="form-control" asp-items="ViewBag.DivisionId"></select>
+                <span asp-validation-for="DivisionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialDivisionId" class="control-label"></label>
+                <select asp-for="SpecialDivisionId" class="form-control" asp-items="ViewBag.SpecialDivisionId"></select>
+                <span asp-validation-for="SpecialDivisionId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeaponName" class="control-label"></label>
+                <input asp-for="WeaponName" class="form-control" />
+                <span asp-validation-for="WeaponName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeaponPowerId" class="control-label"></label>
+                <select asp-for="WeaponPowerId" class="form-control" asp-items="ViewBag.WeaponPowerId"></select>
+                <span asp-validation-for="WeaponPowerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

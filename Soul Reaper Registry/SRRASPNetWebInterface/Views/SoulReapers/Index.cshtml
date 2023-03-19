@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Data.Models.SoulReaper>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Soul Reapers</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Division)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialDivision)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeaponPowers)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialDivision.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeaponName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeaponPowers.FirstForm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SRId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SRId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SRId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

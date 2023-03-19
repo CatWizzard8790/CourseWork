@@ -9,6 +9,16 @@ namespace Data
     /// </summary>
     public class SRRContext : DbContext
     {
+        public SRRContext()
+        {
+
+        }
+
+        public SRRContext(DbContextOptions<SRRContext> options) : base(options)
+        {
+
+        }
+
         public DbSet<SoulReaper> SoulReaper { get; set; }
         public DbSet<SpecialDivision> SpecialDivision { get; set; }
         public DbSet<WeaponPower> WeaponPower { get; set; }
