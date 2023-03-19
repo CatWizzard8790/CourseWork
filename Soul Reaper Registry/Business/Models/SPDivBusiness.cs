@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Business.Models
 {
+    /// <summary>
+    /// Controller for the SpecialDivision class. It allows the usage of the GetAll, Get, Add Update, Delete operations for the SpecialDivision table.
+    /// </summary>
     public class SPDivBusiness
     {
         private SRRContext sRRContext;

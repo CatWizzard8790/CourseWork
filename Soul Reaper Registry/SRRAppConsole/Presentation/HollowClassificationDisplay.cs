@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace SRRAppConsole.Presentation
 {
+    /// <summary>
+    /// Implements the CRUD methods from Display for Hollow Classification.
+    /// </summary>
     public class HollowClassificationDisplay : Display
     {
         HCBusiness hCBusiness = new HCBusiness();

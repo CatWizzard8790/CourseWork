@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Business.Models
 {
+    /// <summary>
+    /// Controller for the Division class. It allows the usage of the GetAll, Get, Add Update, Delete operations for the Division table.
+    /// </summary>
     public class DivBusiness
     {
         private SRRContext sRRContext;

@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Business.Models
 {
+    /// <summary>
+    /// Controller for the WeaponPower class. It allows the usage of the GetAll, Get, Add Update, Delete operations for the WeaponPower table.
+    /// </summary>
     public class WPBusiness
     {
         private SRRContext sRRContext;
