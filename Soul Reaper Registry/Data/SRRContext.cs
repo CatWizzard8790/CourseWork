@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data
 {
+    /// <summary>
+    /// The Database Context for the project. It contains the DbSets for all of the tables/entities and allows the more complex of connection to function.
+    /// </summary>
     public class SRRContext : DbContext
     {
         public DbSet<SoulReaper> SoulReaper { get; set; }
@@ -23,8 +26,10 @@ namespace Data
             }
         }
 
+        //Defines the stubborn properties and connections that do not work otherwise.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //Making sure that all of the properties are required or optional.
             modelBuilder.Entity<Hollow>()
                 .Property(n => n.Name)
                 .IsRequired(true);
@@ -55,6 +60,7 @@ namespace Data
                 .Property(n => n.Name)
                 .IsRequired(true);
 
+            //Making the complex relation to the Soul Reaper table a reality
             modelBuilder.Entity<Division>()
                 .HasOne(d => d.Captain)
                 .WithMany()
@@ -72,6 +78,7 @@ namespace Data
             modelBuilder.Entity<Division>()
                 .HasMany(s => s.SoulReapers);
 
+            //Defining the Special Division connections and properties.
             modelBuilder.Entity<SpecialDivision>()
                 .HasOne(d => d.Leader)
                 .WithMany()
