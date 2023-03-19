@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{A56048ED-FB05-4EE5-8304-7E53C9B00C72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{A56048ED-FB05-4EE5-8304-7E53C9B00C72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{A6794BE0-A8C1-4AD3-A7EB-7F6060DB2B59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRRAppConsole", "SRRAppConsole\SRRAppConsole.csproj", "{4A523834-66F1-4936-B3C0-6A9C28B6D59E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SRRAppConsole", "SRRAppConsole\SRRAppConsole.csproj", "{4A523834-66F1-4936-B3C0-6A9C28B6D59E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRRTests", "SRRTests\SRRTests.csproj", "{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A523834-66F1-4936-B3C0-6A9C28B6D59E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2CBD031-6DF0-4C6C-975B-212EB3143FEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

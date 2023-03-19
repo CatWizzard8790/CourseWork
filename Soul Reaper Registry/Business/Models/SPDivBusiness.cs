@@ -12,6 +12,15 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
+        public SPDivBusiness(SRRContext sRRContext)
+        {
+            this.sRRContext = sRRContext;
+        }
+
+        public SPDivBusiness()
+        {
+
+        }
         public List<SpecialDivision> GetAll()
         {
             using (sRRContext = new SRRContext())

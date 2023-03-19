@@ -12,6 +12,16 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
+        public SRRBusiness(SRRContext sRRContext)
+        {
+            this.sRRContext = sRRContext;
+        }
+
+        public SRRBusiness()
+        {
+
+        }
+
         public List<SoulReaper> GetAll()
         {
             using (sRRContext = new SRRContext())
