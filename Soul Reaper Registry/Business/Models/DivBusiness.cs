@@ -12,6 +12,16 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
+        public DivBusiness(SRRContext sRRContext)
+        {
+            this.sRRContext = sRRContext;
+        }
+
+        public DivBusiness()
+        {
+
+        }
+
         public List<Division> GetAll()
         {
             using (sRRContext = new SRRContext())

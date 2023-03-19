@@ -12,6 +12,16 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
+        public WPBusiness(SRRContext sRRContext)
+        {
+            this.sRRContext = sRRContext;
+        }
+
+        public WPBusiness()
+        {
+
+        }
+
         public List<WeaponPower> GetAll()
         {
             using (sRRContext = new SRRContext())

@@ -12,6 +12,16 @@ namespace Business.Models
     {
         private SRRContext sRRContext;
 
+        public HCBusiness(SRRContext sRRContext)
+        {
+            this.sRRContext = sRRContext;
+        }
+
+        public HCBusiness()
+        {
+
+        }
+
         public List<HollowClassification> GetAll()
         {
             using (sRRContext = new SRRContext())
