@@ -13,7 +13,7 @@ namespace Data.Migrations
                 {
                     HCId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -27,7 +27,7 @@ namespace Data.Migrations
                 {
                     WPId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstForm = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstForm = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SecondForm = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PType = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -43,13 +43,13 @@ namespace Data.Migrations
                 {
                     SRId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     EnrollDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     Available = table.Column<bool>(type: "bit", nullable: false),
                     DivisionId = table.Column<int>(type: "int", nullable: true),
                     SpecialDivisionId = table.Column<int>(type: "int", nullable: true),
-                    WeaponName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WeaponName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WeaponPowerId = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -70,7 +70,7 @@ namespace Data.Migrations
                 {
                     DivisionNumber = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CaptainId = table.Column<int>(type: "int", nullable: true),
                     LieutenantId = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true)
@@ -98,7 +98,7 @@ namespace Data.Migrations
                 {
                     HId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     HollowClassificationId = table.Column<int>(type: "int", nullable: false),
                     WeaponPowerId = table.Column<int>(type: "int", nullable: true),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),

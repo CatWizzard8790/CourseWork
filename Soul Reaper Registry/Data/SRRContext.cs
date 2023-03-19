@@ -17,7 +17,7 @@ namespace Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             {
-                optionsBuilder.UseSqlServer(@"Server=(localdb)\Jimmy; DataBase = SoulReaperRegistry; Integrated security = true");
+                optionsBuilder.UseSqlServer(@"Server = DESKTOP-V015LRG\SQLEXPRESS; DataBase = SoulReaperRegistry; Integrated security = true");
                 //DESKTOP-V015LRG\SQLEXPRESS
                 //(localdb)\Jimmy
             }
@@ -25,6 +25,36 @@ namespace Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Hollow>()
+                .Property(n => n.Name)
+                .IsRequired(true);
+
+            modelBuilder.Entity<HollowClassification>()
+                .Property(n => n.Name)
+                .IsRequired(true);
+
+            modelBuilder.Entity<HollowClassification>()
+                .HasMany(h => h.Hollows);
+
+            modelBuilder.Entity<SoulReaper>()
+                .Property(fn => fn.FirstName)
+                .IsRequired(true);
+
+            modelBuilder.Entity<SoulReaper>()
+                .Property(wpn => wpn.WeaponName)
+                .IsRequired(true);
+
+            modelBuilder.Entity<SoulReaper>()
+                .HasMany(h => h.Hollows);
+
+            modelBuilder.Entity<WeaponPower>()
+                .Property(ff => ff.FirstForm)
+                .IsRequired(true);
+
+            modelBuilder.Entity<Division>()
+                .Property(n => n.Name)
+                .IsRequired(true);
+
             modelBuilder.Entity<Division>()
                 .HasOne(d => d.Captain)
                 .WithMany()
@@ -39,6 +69,9 @@ namespace Data
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<Division>()
+                .HasMany(s => s.SoulReapers);
+
             modelBuilder.Entity<SpecialDivision>()
                 .HasOne(d => d.Leader)
                 .WithMany()
@@ -46,28 +79,15 @@ namespace Data
                 .IsRequired(false)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<SoulReaper>()
-                .HasMany(h => h.Hollows);
-
-            modelBuilder.Entity<Division>()
-                .HasMany(s => s.SoulReapers);
-
             modelBuilder.Entity<SpecialDivision>()
                 .HasMany(s => s.SoulReapers);
 
-            modelBuilder.Entity<HollowClassification>()
-                .HasMany(h => h.Hollows);
+            modelBuilder.Entity<SpecialDivision>()
+                .Property(n => n.Name)
+                .IsRequired(true);
 
 
-            //modelBuilder.Entity<MissionHollow>()
-            //    .HasKey(mh => new { mh.HollowsId, mh.MissionsId });
-            //modelBuilder.Entity<MissionSoulReaper>()
-            //    .HasKey(msr => new { msr.MissionId, msr.SRId });
 
-            //modelBuilder.Entity<Hollow>()
-            //    .HasMany<Mission>(h => h.Missions)
-            //    .WithMany(m => m.Hollows)
-            //    .HasForeignKey(mh => mh.Missions )
         }
     }
 }

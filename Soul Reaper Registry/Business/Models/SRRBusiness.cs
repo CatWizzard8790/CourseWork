@@ -24,7 +24,9 @@ namespace Business.Models
         {
             using (sRRContext = new SRRContext())
             {
-                return sRRContext.SoulReaper.Find(id);
+                SoulReaper sr = sRRContext.SoulReaper.Find(1);
+                sRRContext.Entry(sr).Reference(d => d.Division).Load();
+                return sr;
             }
         }
 

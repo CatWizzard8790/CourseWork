@@ -166,7 +166,7 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("Last Name: " + sr.LastName);
                 Console.WriteLine($"Enroll Date: {sr.EnrollDate}");
                 Console.WriteLine($"Available: {sr.Available}");
-                Console.WriteLine($"Division Id: {sr.DivisionId}");
+                Console.WriteLine($"Division Id: {sr.DivisionId} {sr.Division.Name}");
                 Console.WriteLine($"Special Id: {sr.SpecialDivisionId}");
                 Console.WriteLine("Weapon Name: " + sr.WeaponName);
                 Console.WriteLine("Weapon Power Id: " + sr.WeaponPowerId);

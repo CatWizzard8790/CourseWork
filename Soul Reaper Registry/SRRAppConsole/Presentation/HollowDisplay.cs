@@ -71,6 +71,7 @@ namespace SRRAppConsole.Presentation
             }
             catch (Exception e)
             {
+                Console.WriteLine(e);
                 Console.WriteLine("Error! Incorrect data!");
             }
         }
