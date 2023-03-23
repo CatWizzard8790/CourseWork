@@ -32,12 +32,5 @@ namespace Data.Models
         [ForeignKey("SoulReaper")]
         public int? SRId { get; set; }
         public SoulReaper SoulReaper { get; set; }
-
-        public Hollow()
-        {
-            WeaponPowerId = 0;
-            Description = null;
-            SRId = 0;
-        }
     }
 }
