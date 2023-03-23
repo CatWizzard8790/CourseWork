@@ -48,10 +48,10 @@ namespace SRRAppConsole.Presentation
             string data;
             Hollow hollows = new Hollow();
 
-            Console.Write("Name: ");
+            Console.Write("Name*: ");
             hollows.Name = Console.ReadLine();
 
-            Console.Write("Class Id: ");
+            Console.Write("Class Id*: ");
             hollows.HollowClassificationId = int.Parse(Console.ReadLine());
 
             Console.Write("Weapon Power Id: ");

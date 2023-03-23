@@ -51,7 +51,7 @@ namespace SRRAppConsole.Presentation
             string data;
             SpecialDivision SPdiv = new SpecialDivision();
 
-            Console.Write("Name: ");
+            Console.Write("Name*: ");
             SPdiv.Name = Console.ReadLine();
 
             Console.Write("Leader Id: ");

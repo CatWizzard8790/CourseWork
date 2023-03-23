@@ -50,13 +50,13 @@ namespace SRRAppConsole.Presentation
             string data;
             WeaponPower WPs = new WeaponPower();
 
-            Console.Write("First Form: ");
+            Console.Write("First Form*: ");
             WPs.FirstForm = Console.ReadLine();
 
-            Console.Write("Second Form: ");
+            Console.Write("Second Form*: ");
             WPs.SecondForm = Console.ReadLine();
 
-            Console.Write("Power Type: ");
+            Console.Write("Power Type*: ");
             Console.Write("Choose one : 1.Bankai | 2.Resurreccion | 3.Other ");
             WPs.PType = (PowerType)int.Parse(Console.ReadLine()) - 1;            
 

@@ -48,7 +48,7 @@ namespace SRRAppConsole.Presentation
             string data;
             HollowClassification hollowClassifications = new HollowClassification();
 
-            Console.Write("Name: ");
+            Console.Write("Name*: ");
             hollowClassifications.Name = Console.ReadLine();            
 
             Console.Write("Description: ");

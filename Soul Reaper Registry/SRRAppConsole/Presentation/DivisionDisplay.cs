@@ -53,7 +53,7 @@ namespace SRRAppConsole.Presentation
             string data;
             Division product = new Division();
 
-            Console.Write("Name: ");
+            Console.Write("Name*: ");
             product.Name = Console.ReadLine();
 
             Console.Write("Captain Id: ");

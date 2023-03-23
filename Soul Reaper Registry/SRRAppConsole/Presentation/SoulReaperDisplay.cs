@@ -56,17 +56,17 @@ namespace SRRAppConsole.Presentation
             string data;
             SoulReaper sr = new SoulReaper();
 
-            Console.Write("First Name: ");
+            Console.Write("First Name*: ");
             sr.FirstName = Console.ReadLine();
 
-            Console.Write("Last Name: ");
+            Console.Write("Last Name*: ");
             sr.LastName = Console.ReadLine();
 
             Console.Write("Enroll Date: ");
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.EnrollDate = DateTime.Parse(data);
 
-            Console.Write("Available (true or false): ");
+            Console.Write("Available* (true or false): ");
             sr.Available = bool.Parse(Console.ReadLine());
 
             Console.Write("Division Id: ");
@@ -77,7 +77,7 @@ namespace SRRAppConsole.Presentation
             data = Console.ReadLine();
             if (EmptyStringChecker(data)) sr.SpecialDivisionId = int.Parse(data);
 
-            Console.Write("Weapon Name: ");
+            Console.Write("Weapon Name*: ");
             sr.WeaponName = Console.ReadLine();
 
             Console.Write("Weapon Power Id: ");
@@ -179,6 +179,14 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine("Weapon Power Id: " + sr.WeaponPowerId + $"| Weapon Power: {(sr.WeaponPowers == null ? " " : sr.WeaponPowers.FirstForm)}");
                 Console.WriteLine("Description: " + sr.Description);
 
+                Console.WriteLine(new string('-', 40));
+
+                int counter = 1;
+                foreach (var h in hcs.Hollows)
+                {
+                    Console.WriteLine($"{counter}. Id: {h.SRId} Name: {(h.Name == null ? " " : h.Name)}");
+                    counter++;
+                }
                 Console.WriteLine(new string('-', 40));
             }
             else
