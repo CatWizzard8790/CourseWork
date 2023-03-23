@@ -73,7 +73,7 @@ namespace SRRAppConsole.Presentation
             HollowClassification hollow = hCBusiness.Get(id);
             if (hollow != null)
             {
-                Console.Write("Name: ");
+                Console.Write("*Name: ");
                 hollow.Name = Console.ReadLine();
 
                 Console.Write("Description: ");
@@ -112,12 +112,12 @@ namespace SRRAppConsole.Presentation
 
                 Console.WriteLine(new string('-', 40));
 
-                Console.WriteLine("Hollows with this Classification: \n");
+                Console.WriteLine($"Hollows with this Classification: {hcs.Hollows.Count}\n");
 
                 int counter = 1;
                 foreach (var srr in hcs.Hollows)
                 {
-                    Console.WriteLine($"{counter}. {(srr.Name == null ? " " : srr.Name)}");
+                    Console.WriteLine($"{counter}. Id: {srr.SRId} Name: {(srr.Name == null ? " " : srr.Name)}");
                     counter++;
                 }
 

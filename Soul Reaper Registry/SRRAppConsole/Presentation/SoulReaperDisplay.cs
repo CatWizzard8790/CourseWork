@@ -109,17 +109,17 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine($"Id: {sr.SRId}| First Name: {sr.FirstName}| Last Name: {sr.LastName}| EnrollDate: {sr.EnrollDate}| Available: {sr.Available}| Division Id: {sr.DivisionId}| Special Id:  {sr.SpecialDivisionId}| Weapon Name:  {sr.WeaponName}| Weapon Power Id:  {sr.WeaponPowerId}| Description:  {sr.Description}|");
                 string data;
 
-                Console.Write("First Name: ");
+                Console.Write("*First Name: ");
                 sr.FirstName = Console.ReadLine();
 
-                Console.Write("Last Name: ");
+                Console.Write("*Last Name: ");
                 sr.LastName = Console.ReadLine();
 
                 Console.Write("Enroll Date: ");
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.EnrollDate = DateTime.Parse(data);
 
-                Console.Write("Available: ");
+                Console.Write("*Available: ");
                 sr.Available = bool.Parse(Console.ReadLine());
 
                 Console.Write("Division Id: ");
@@ -130,7 +130,7 @@ namespace SRRAppConsole.Presentation
                 data = Console.ReadLine();
                 if (EmptyStringChecker(data)) sr.SpecialDivisionId = int.Parse(data);
 
-                Console.Write("Weapon Name: ");
+                Console.Write("*Weapon Name: ");
                 sr.WeaponName = Console.ReadLine();
 
                 Console.Write("Weapon Power Id: ");
@@ -164,6 +164,7 @@ namespace SRRAppConsole.Presentation
             sRRContext.Entry(sr).Reference(d => d.Division).Load();
             sRRContext.Entry(sr).Reference(s => s.SpecialDivision).Load();
             sRRContext.Entry(sr).Reference(w => w.WeaponPowers).Load();
+            sRRContext.Entry(sr).Collection(sr => sr.Hollows).Load();
 
             if (sr != null)
             {
@@ -181,10 +182,12 @@ namespace SRRAppConsole.Presentation
 
                 Console.WriteLine(new string('-', 40));
 
+                Console.WriteLine($"Hollows Killed: {sr.Hollows.Count}\n");
+
                 int counter = 1;
-                foreach (var h in hcs.Hollows)
+                foreach (var h in sr.Hollows)
                 {
-                    Console.WriteLine($"{counter}. Id: {h.SRId} Name: {(h.Name == null ? " " : h.Name)}");
+                    Console.WriteLine($"{counter}. Id: {h.HId} Name: {(h.Name == null ? " " : h.Name)}");
                     counter++;
                 }
                 Console.WriteLine(new string('-', 40));
