@@ -22,12 +22,12 @@ namespace Data.Models
 
         [ForeignKey("Captain")]
         public int? CaptainId { get; set; }
-        public SoulReaper Captain { get; set; }
+        public SoulReaper? Captain { get; set; }
 
 
         [ForeignKey("Lieutenant")]
         public int? LieutenantId { get; set; }
-        public SoulReaper Lieutenant { get; set; }
+        public SoulReaper? Lieutenant { get; set; }
 
         public string? Description { get; set; }
         public Division()

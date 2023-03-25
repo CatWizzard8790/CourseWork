@@ -86,6 +86,8 @@ namespace SRRAppConsole.Presentation
             Hollow hollow = hBusiness.Get(id);
             if (hollow != null)
             {
+                Console.WriteLine($"Id: {hollow.HId}| Name: {hollow.Name}| Class: {hollow.HollowClassificationId}| Weapon Power: {hollow.WeaponPowerId} Description: {hollow.Description}|");
+
                 Console.Write("*Name: ");
                 hollow.Name = Console.ReadLine();
 
