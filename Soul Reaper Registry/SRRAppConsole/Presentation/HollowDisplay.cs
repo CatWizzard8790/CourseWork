@@ -40,7 +40,7 @@ namespace SRRAppConsole.Presentation
             var hcs = hBusiness.GetAll();
             foreach (var item in sRRContext.Hollow.Include(s => s.HollowClassification).Include(s => s.WeaponPower))
             {
-                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class: { item.HollowClassification.Name}| Weapon Power: {(item.WeaponPower == null ? " " : item.WeaponPower.FirstForm)} Description: {item.Description}|");
+                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class: { item.HollowClassification.Name}| Weapon Power: {(item.WeaponPower == null ? " " : item.WeaponPower.FirstForm)}| Description: {item.Description}|");
             }
         }
         public override void Add()
@@ -91,7 +91,7 @@ namespace SRRAppConsole.Presentation
                 Console.Write("*Name: ");
                 hollow.Name = Console.ReadLine();
 
-                Console.Write("*Class Id");
+                Console.Write("*Class Id: ");
                 hollow.HollowClassificationId = int.Parse(Console.ReadLine());
 
                 Console.Write("Weapon Power Id: ");
