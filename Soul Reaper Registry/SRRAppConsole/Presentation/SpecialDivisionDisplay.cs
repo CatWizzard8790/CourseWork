@@ -43,7 +43,7 @@ namespace SRRAppConsole.Presentation
             var SDiv = sPDBusiness.GetAll();
             foreach (var item in sRRContext.SpecialDivision.Include(s => s.Leader))
             {
-                Console.WriteLine($"Special Division Id: {item.SDId}| Name: {item.Name}| Leader: {(item.Leader == null ? " " : item.Leader.FirstName)} {(item.Leader == null ? " " : item.Leader.LastName)}| Description: {item.Description}|");
+                Console.WriteLine($"Special Division Id: {item.SDId}| Name: {item.Name}| Leader: {(item.Leader == null ? " " : item.Leader.FirstName)} {(item.Leader == null ? " " : item.Leader.LastName)}| Description: {item.Description}| \n");
             }
         }
         public override void Add()
