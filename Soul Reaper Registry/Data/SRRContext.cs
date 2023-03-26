@@ -29,8 +29,9 @@ namespace Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            
             {
-                optionsBuilder.UseSqlServer(@"Server = DESKTOP-V015LRG\SQLEXPRESS; DataBase = SoulReaperRegistry; Integrated security = true");
+                optionsBuilder.UseSqlServer(@"Server = (localdb)\Jimmy; DataBase = SoulReaperRegistry; Integrated security = true");
                 //DESKTOP-V015LRG\SQLEXPRESS
                 //(localdb)\Jimmy
             }

@@ -53,7 +53,7 @@ namespace SRRAppConsole.Presentation
             string data;
             Division product = new Division();
 
-            Console.Write("Name: ");
+            Console.Write("Name*: ");
             product.Name = Console.ReadLine();
 
             Console.Write("Captain Id: ");
@@ -90,7 +90,7 @@ namespace SRRAppConsole.Presentation
                 Console.WriteLine($"Id: {sr.DivisionNumber}| Name: {sr.Name}| Captain Id : {sr.CaptainId}| Lieutenant Id :{sr.LieutenantId}| Description : {sr.Description}|");
                 string data;
 
-                Console.Write("Name: ");
+                Console.Write("*Name: ");
                 sr.Name = Console.ReadLine();
 
                 Console.Write("Captain Id: ");
@@ -140,12 +140,12 @@ namespace SRRAppConsole.Presentation
 
                 Console.WriteLine(new string('-', 40));
 
-                Console.WriteLine("Division Members: \n");
+                Console.WriteLine($"Division Members: {sr.SoulReapers.Count}\n");
                 int counter = 1;
                 
                 foreach (var srr in sr.SoulReapers)
                 {
-                    Console.WriteLine($"{counter}. {(srr.FirstName == null ? " " : srr.FirstName)} {(srr.LastName == null ? " " : srr.LastName)} \n");
+                    Console.WriteLine($"{counter}. Id: {srr.SRId} Name: {(srr.FirstName == null ? " " : srr.FirstName)} {(srr.LastName == null ? " " : srr.LastName)} \n");
                     counter++;
                 }
 

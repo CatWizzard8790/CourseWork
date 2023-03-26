@@ -40,7 +40,7 @@ namespace SRRAppConsole.Presentation
             var hcs = hBusiness.GetAll();
             foreach (var item in sRRContext.Hollow.Include(s => s.HollowClassification).Include(s => s.WeaponPower))
             {
-                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class: { item.HollowClassification.Name}| Weapon Power: {(item.WeaponPower == null ? " " : item.WeaponPower.FirstForm)} Description: {item.Description}|");
+                Console.WriteLine($"Id: {item.HId}| Name: {item.Name}| Class: { item.HollowClassification.Name}| Weapon Power: {(item.WeaponPower == null ? " " : item.WeaponPower.FirstForm)}| Description: {item.Description}|");
             }
         }
         public override void Add()
@@ -48,10 +48,10 @@ namespace SRRAppConsole.Presentation
             string data;
             Hollow hollows = new Hollow();
 
-            Console.Write("Name: ");
+            Console.Write("Name*: ");
             hollows.Name = Console.ReadLine();
 
-            Console.Write("Class Id: ");
+            Console.Write("Class Id*: ");
             hollows.HollowClassificationId = int.Parse(Console.ReadLine());
 
             Console.Write("Weapon Power Id: ");
@@ -86,10 +86,12 @@ namespace SRRAppConsole.Presentation
             Hollow hollow = hBusiness.Get(id);
             if (hollow != null)
             {
-                Console.Write("Name: ");
+                Console.WriteLine($"Id: {hollow.HId}| Name: {hollow.Name}| Class: {hollow.HollowClassificationId}| Weapon Power: {hollow.WeaponPowerId} Description: {hollow.Description}|");
+
+                Console.Write("*Name: ");
                 hollow.Name = Console.ReadLine();
 
-                Console.Write("Class Id");
+                Console.Write("*Class Id: ");
                 hollow.HollowClassificationId = int.Parse(Console.ReadLine());
 
                 Console.Write("Weapon Power Id: ");
@@ -133,7 +135,7 @@ namespace SRRAppConsole.Presentation
             {
                 Console.WriteLine(new string('-', 40));
 
-                Console.WriteLine("ID: " + hcs.HId);
+                Console.WriteLine("Id: " + hcs.HId);
                 Console.WriteLine("Name: " + hcs.Name);
                 Console.WriteLine("Class Id: " + hcs.HollowClassificationId + $"| Class Name: {(hcs.HollowClassification == null ? " " : hcs.HollowClassification.Name)} ");
                 Console.WriteLine("Weapon Power Id: " + hcs.WeaponPowerId + $"| Weapon Power: {(hcs.WeaponPower == null ? " " : hcs.WeaponPower.FirstForm)}" );
